@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전환 사업 - 행정·공공기관 클라우드전문지원센터</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="header-main">
+            <div class="container">
+                <div class="logo-section">
+                    <h1 class="logo">
+                        <a href="index.html" style="text-decoration: none; color: inherit;">
+                            <span class="logo-text">행정·공공기관</span>
+                            <span class="logo-sub">클라우드전문지원센터</span>
+                        </a>
+                    </h1>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="intro.html" class="nav-link">센터 소개</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="timeline.html" class="nav-link">정책 타임라인</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="projects.html" class="nav-link active">전환 사업</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="resources.html" class="nav-link">자료실</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="faq.html" class="nav-link">자주하는질문</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 페이지 헤더 -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">전환 사업</h1>
+            <p class="page-subtitle">진행 중인 클라우드 전환 사업들을 확인하세요</p>
+        </div>
+    </section>
+
+    <!-- 사업 현황 요약 -->
+    <section class="section project-summary-section">
+        <div class="container">
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div class="summary-icon">📊</div>
+                    <div class="summary-number">156</div>
+                    <div class="summary-label">전체 사업</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">🔄</div>
+                    <div class="summary-number">89</div>
+                    <div class="summary-label">진행중</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">✅</div>
+                    <div class="summary-number">45</div>
+                    <div class="summary-label">완료</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">📋</div>
+                    <div class="summary-number">22</div>
+                    <div class="summary-label">계획중</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 사업별 상세 정보 -->
+    <section class="section projects-detail-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">주요 전환 사업</h2>
+                <p class="section-subtitle">각 부처별 클라우드 전환 사업의 상세 내용을 확인하세요</p>
+            </div>
+            
+            <div class="projects-categories">
+                <div class="category-tabs">
+                    <button class="tab-btn active" data-category="all">전체</button>
+                    <button class="tab-btn" data-category="ongoing">진행중</button>
+                    <button class="tab-btn" data-category="completed">완료</button>
+                    <button class="tab-btn" data-category="planning">계획중</button>
+                </div>
+            </div>
+
+            <div class="projects-detailed-grid">
+                <div class="project-card-detailed" data-category="ongoing">
+                    <div class="project-header">
+                        <div class="project-image">🏛️</div>
+                        <div class="project-status status-ongoing">진행중</div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <h3>행정안전부 클라우드 전환</h3>
+                        <p class="project-description">행정안전부 주요 시스템의 클라우드 전환 및 통합 관리 체계 구축</p>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <strong>사업 기간:</strong> 2023.01 ~ 2024.12
+                            </div>
+                            <div class="detail-item">
+                                <strong>예산:</strong> 45억원
+                            </div>
+                            <div class="detail-item">
+                                <strong>진행률:</strong> 75%
+                            </div>
+                            <div class="detail-item">
+                                <strong>주요 내용:</strong>
+                                <ul>
+                                    <li>행정정보시스템 클라우드 전환</li>
+                                    <li>통합 인증 시스템 구축</li>
+                                    <li>데이터 백업 및 복구 체계</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-detailed" data-category="completed">
+                    <div class="project-header">
+                        <div class="project-image">🏥</div>
+                        <div class="project-status status-completed">완료</div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <h3>보건복지부 의료정보 시스템</h3>
+                        <p class="project-description">의료정보 시스템의 클라우드 기반 통합 및 보안 강화</p>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <strong>사업 기간:</strong> 2022.03 ~ 2023.11
+                            </div>
+                            <div class="detail-item">
+                                <strong>예산:</strong> 32억원
+                            </div>
+                            <div class="detail-item">
+                                <strong>완료일:</strong> 2023.11.30
+                            </div>
+                            <div class="detail-item">
+                                <strong>주요 성과:</strong>
+                                <ul>
+                                    <li>시스템 응답 속도 40% 향상</li>
+                                    <li>운영 비용 25% 절감</li>
+                                    <li>보안 수준 대폭 강화</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-detailed" data-category="planning">
+                    <div class="project-header">
+                        <div class="project-image">🏫</div>
+                        <div class="project-status status-planning">계획중</div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <h3>교육부 교육정보 시스템</h3>
+                        <p class="project-description">교육정보 시스템의 클라우드 전환 및 원격교육 플랫폼 구축</p>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <strong>계획 기간:</strong> 2024.07 ~ 2026.06
+                            </div>
+                            <div class="detail-item">
+                                <strong>예산:</strong> 58억원
+                            </div>
+                            <div class="detail-item">
+                                <strong>시작 예정:</strong> 2024.07
+                            </div>
+                            <div class="detail-item">
+                                <strong>주요 계획:</strong>
+                                <ul>
+                                    <li>전국 교육정보 통합 시스템</li>
+                                    <li>AI 기반 맞춤형 교육 서비스</li>
+                                    <li>원격교육 플랫폼 구축</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-detailed" data-category="ongoing">
+                    <div class="project-header">
+                        <div class="project-image">🚗</div>
+                        <div class="project-status status-ongoing">진행중</div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <h3>국토교통부 교통정보 시스템</h3>
+                        <p class="project-description">교통정보 시스템의 실시간 데이터 처리 및 클라우드 기반 운영</p>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <strong>사업 기간:</strong> 2023.06 ~ 2025.05
+                            </div>
+                            <div class="detail-item">
+                                <strong>예산:</strong> 67억원
+                            </div>
+                            <div class="detail-item">
+                                <strong>진행률:</strong> 45%
+                            </div>
+                            <div class="detail-item">
+                                <strong>주요 내용:</strong>
+                                <ul>
+                                    <li>실시간 교통정보 처리 시스템</li>
+                                    <li>빅데이터 분석 플랫폼</li>
+                                    <li>스마트 교통 신호 시스템</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-detailed" data-category="completed">
+                    <div class="project-header">
+                        <div class="project-image">🏦</div>
+                        <div class="project-status status-completed">완료</div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <h3>기획재정부 예산관리 시스템</h3>
+                        <p class="project-description">국가 예산 관리 시스템의 클라우드 전환 및 통합 관리</p>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <strong>사업 기간:</strong> 2022.01 ~ 2023.08
+                            </div>
+                            <div class="detail-item">
+                                <strong>예산:</strong> 28억원
+                            </div>
+                            <div class="detail-item">
+                                <strong>완료일:</strong> 2023.08.15
+                            </div>
+                            <div class="detail-item">
+                                <strong>주요 성과:</strong>
+                                <ul>
+                                    <li>예산 처리 속도 60% 향상</li>
+                                    <li>데이터 정확성 95% 달성</li>
+                                    <li>시스템 가용성 99.9% 달성</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card-detailed" data-category="ongoing">
+                    <div class="project-header">
+                        <div class="project-image">🔬</div>
+                        <div class="project-status status-ongoing">진행중</div>
+                    </div>
+                    <div class="project-content-detailed">
+                        <h3>과학기술정보통신부 연구개발 시스템</h3>
+                        <p class="project-description">연구개발 정보 관리 시스템의 클라우드 전환 및 협업 플랫폼 구축</p>
+                        <div class="project-details">
+                            <div class="detail-item">
+                                <strong>사업 기간:</strong> 2023.09 ~ 2025.08
+                            </div>
+                            <div class="detail-item">
+                                <strong>예산:</strong> 52억원
+                            </div>
+                            <div class="detail-item">
+                                <strong>진행률:</strong> 35%
+                            </div>
+                            <div class="detail-item">
+                                <strong>주요 내용:</strong>
+                                <ul>
+                                    <li>연구개발 정보 통합 관리</li>
+                                    <li>협업 연구 플랫폼 구축</li>
+                                    <li>AI 기반 연구 성과 분석</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 사업 지원 서비스 -->
+    <section class="section support-services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">사업 지원 서비스</h2>
+                <p class="section-subtitle">클라우드 전환 사업을 위한 다양한 지원 서비스를 제공합니다</p>
+            </div>
+            <div class="support-services-grid">
+                <div class="support-service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>컨설팅 서비스</h3>
+                    <p>클라우드 전환 전략 수립부터 실행까지 전문 컨설팅을 제공합니다.</p>
+                    <ul>
+                        <li>전환 전략 수립</li>
+                        <li>아키텍처 설계</li>
+                        <li>비용 분석 및 최적화</li>
+                        <li>리스크 관리</li>
+                    </ul>
+                </div>
+                <div class="support-service-card">
+                    <div class="service-icon">🛠️</div>
+                    <h3>기술 지원</h3>
+                    <p>전환 과정에서 필요한 기술적 문제 해결 및 최적화를 지원합니다.</p>
+                    <ul>
+                        <li>기술 검토 및 평가</li>
+                        <li>성능 최적화</li>
+                        <li>보안 강화</li>
+                        <li>모니터링 구축</li>
+                    </ul>
+                </div>
+                <div class="support-service-card">
+                    <div class="service-icon">📚</div>
+                    <h3>교육 훈련</h3>
+                    <p>클라우드 전환에 필요한 전문 지식과 기술을 교육합니다.</p>
+                    <ul>
+                        <li>기본 개념 교육</li>
+                        <li>실무 기술 훈련</li>
+                        <li>사례 중심 학습</li>
+                        <li>자격증 취득 지원</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>클라우드 타임라인 센터</h3>
+                    <p>정부 클라우드 정책과 전환 사업을 지원하는 전문 기관</p>
+                </div>
+                <div class="footer-section">
+                    <h4>연락처</h4>
+                    <p>📞 02-1234-5678</p>
+                    <p>📧 info@cloudtimeline.go.kr</p>
+                    <p>📍 서울특별시 종로구 세종로 1</p>
+                </div>
+                <div class="footer-section">
+                    <h4>바로가기</h4>
+                    <ul>
+                        <li><a href="intro.html">센터 소개</a></li>
+                        <li><a href="timeline.html">정책 타임라인</a></li>
+                        <li><a href="projects.html">전환 사업</a></li>
+                        <li><a href="resources.html">자료실</a></li>
+                        <li><a href="faq.html">자주하는질문</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 클라우드 타임라인 센터. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
