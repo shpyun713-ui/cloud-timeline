@@ -686,89 +686,264 @@ body {
     line-height: 1.6;
 }
 
-/* 정책 타임라인 상세 */
+/* 정책 타임라인 상세 - 새로운 Flexbox 기반 디자인 */
 .timeline-detail-section {
-    background: #fff;
+    background: #f8f9fa;
+    padding: 80px 0;
 }
 
 .timeline-overview {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 
 .timeline-overview h2 {
-    font-size: 32px;
     color: #1e3a8a;
+    font-size: 36px;
     margin-bottom: 20px;
+    font-weight: 700;
 }
 
 .timeline-overview p {
-    font-size: 18px;
     color: #6b7280;
+    font-size: 18px;
+    line-height: 1.6;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.timeline-detailed {
-    max-width: 900px;
+/* 새로운 타임라인 컨테이너 */
+.timeline-container {
+    position: relative;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-.timeline-item-detailed {
-    margin-bottom: 60px;
+/* 중앙 타임라인 선 */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #1e3a8a, #8b5cf6);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+/* 타임라인 아이템 */
+.timeline-item {
+    position: relative;
     display: flex;
-    gap: 30px;
-    align-items: flex-start;
+    align-items: center;
+    margin-bottom: 80px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
 }
 
-.timeline-date-detailed {
-    background: #1e3a8a;
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) { animation-delay: 0.3s; }
+.timeline-item:nth-child(4) { animation-delay: 0.4s; }
+.timeline-item:nth-child(5) { animation-delay: 0.5s; }
+
+/* 짝수 아이템은 오른쪽에 배치 */
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+    text-align: right;
+    margin-right: 60px;
+    margin-left: 0;
+}
+
+.timeline-item:nth-child(even) .timeline-link {
+    text-align: right;
+}
+
+/* 타임라인 노드 (중앙 원형 점) */
+.timeline-node {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #1e3a8a, #8b5cf6);
+    border: 4px solid #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
+}
+
+/* 타임라인 날짜 */
+.timeline-date {
+    background: linear-gradient(135deg, #1e3a8a, #8b5cf6);
     color: #fff;
-    padding: 15px 25px;
+    padding: 12px 24px;
     border-radius: 25px;
     font-weight: 600;
-    font-size: 18px;
-    min-width: 120px;
-    text-align: center;
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(30, 58, 138, 0.2);
 }
 
-.timeline-content-detailed {
+.timeline-item:nth-child(even) .timeline-date {
+    margin-left: 60px;
+}
+
+/* 타임라인 콘텐츠 */
+.timeline-content {
     background: #fff;
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
     flex: 1;
+    max-width: 500px;
+    margin-left: 60px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.timeline-content-detailed h3 {
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+}
+
+.timeline-content h3 {
     color: #1e3a8a;
     font-size: 22px;
     margin-bottom: 15px;
     font-weight: 600;
+    line-height: 1.3;
 }
 
-.timeline-description {
+.timeline-content p {
     color: #6b7280;
     font-size: 16px;
-    margin-bottom: 25px;
     line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-.timeline-details h4 {
+/* 타임라인 링크 */
+.timeline-link {
+    color: #8b5cf6;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.timeline-link:hover {
     color: #1e3a8a;
-    font-size: 18px;
-    margin: 20px 0 10px 0;
-    font-weight: 600;
 }
 
-.timeline-details ul, .timeline-details ol {
-    color: #6b7280;
-    margin-left: 20px;
-    line-height: 1.6;
+/* 타임라인 아이콘 (배경) */
+.timeline-icon {
+    position: absolute;
+    font-size: 120px;
+    opacity: 0.05;
+    color: #1e3a8a;
+    z-index: 0;
 }
 
-.timeline-details li {
-    margin-bottom: 8px;
+.timeline-item:nth-child(odd) .timeline-icon {
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.timeline-item:nth-child(even) .timeline-icon {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 애니메이션 */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 1024px) {
+    .timeline-container {
+        max-width: 900px;
+    }
+    
+    .timeline-content {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        flex-direction: column !important;
+        align-items: flex-start;
+        margin-left: 30px;
+    }
+    
+    .timeline-item:nth-child(even) {
+        margin-left: 30px;
+    }
+    
+    .timeline-node {
+        left: 30px;
+    }
+    
+    .timeline-date {
+        margin: 0 0 20px 0 !important;
+        align-self: flex-start;
+    }
+    
+    .timeline-content {
+        margin: 0 0 0 60px !important;
+        max-width: calc(100% - 90px);
+        text-align: left !important;
+    }
+    
+    .timeline-link {
+        text-align: left !important;
+    }
+    
+    .timeline-icon {
+        display: none;
+    }
+    
+    .timeline-overview h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-content {
+        padding: 20px;
+        margin: 0 0 0 40px !important;
+        max-width: calc(100% - 70px);
+    }
+    
+    .timeline-date {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    
+    .timeline-content h3 {
+        font-size: 18px;
+    }
+    
+    .timeline-content p {
+        font-size: 14px;
+    }
 }
 
 /* 정책 현황 */
