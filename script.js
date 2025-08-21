@@ -1,17 +1,17 @@
 // DOM이 로드된 후 실행
 document.addEventListener('DOMContentLoaded', function() {
     
-    // FAQ 아코디언 기능
-    const faqItems = document.querySelectorAll('.faq-item');
+    // FAQ 아코디언 기능 (기본 및 상세)
+    const faqItems = document.querySelectorAll('.faq-item, .faq-item-detailed');
     
     faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
+        const question = item.querySelector('.faq-question, .faq-question-detailed');
         const toggle = item.querySelector('.faq-toggle');
         
         if (question && toggle) {
             question.addEventListener('click', function() {
                 // 현재 활성화된 FAQ 아이템이 다른 것인지 확인
-                const currentlyActive = document.querySelector('.faq-item.active');
+                const currentlyActive = document.querySelector('.faq-item.active, .faq-item-detailed.active');
                 
                 // 다른 FAQ가 열려있다면 닫기
                 if (currentlyActive && currentlyActive !== item) {
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // FAQ 카테고리 필터링
     const categoryBtns = document.querySelectorAll('.category-btn');
-    const faqItems = document.querySelectorAll('.faq-item');
+    const faqItemsDetailed = document.querySelectorAll('.faq-item-detailed');
     
     categoryBtns.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const category = this.getAttribute('data-category');
             
             // FAQ 아이템 필터링
-            faqItems.forEach(item => {
+            faqItemsDetailed.forEach(item => {
                 if (category === 'all' || item.getAttribute('data-category') === category) {
                     item.style.display = 'block';
                     item.style.animation = 'fadeIn 0.5s ease-in';
@@ -75,26 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-
-    // FAQ 검색 기능
-    const faqSearchInput = document.getElementById('faqSearch');
-    if (faqSearchInput) {
-        faqSearchInput.addEventListener('input', function() {
-            const searchTerm = this.value.toLowerCase().trim();
-            
-            faqItems.forEach(item => {
-                const question = item.querySelector('h3').textContent.toLowerCase();
-                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
-                
-                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
-                    item.style.display = 'block';
-                    item.style.animation = 'fadeIn 0.5s ease-in';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        });
-    }
     
     // 전환 사업 카테고리 필터링
     const projectTabBtns = document.querySelectorAll('.projects-categories .tab-btn');
