@@ -376,51 +376,274 @@ body {
     font-weight: bold;
 }
 
-/* 조직도 */
-.organization-section {
+/* 센터 운영 구조 */
+.support-structure-section {
     background: #fff;
+    padding: 80px 0;
 }
 
-.org-chart {
-    max-width: 900px;
+.support-structure {
+    max-width: 1000px;
     margin: 0 auto;
+    position: relative;
 }
 
-.org-level {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.org-item {
-    background: #f8f9fa;
-    border: 2px solid #e5e7eb;
-    padding: 20px;
-    border-radius: 8px;
+/* 중앙 센터 */
+.center-core {
     text-align: center;
-    min-width: 150px;
+    margin-bottom: 60px;
 }
 
-.center-director {
-    background: #1e3a8a;
+.center-circle {
+    display: inline-block;
+    background: linear-gradient(135deg, #1e3a8a, #3b82f6);
     color: #fff;
-    border-color: #1e3a8a;
+    padding: 40px 60px;
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+    animation: pulse 2s infinite;
 }
 
-.org-item h3 {
+.center-circle h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.center-circle p {
     font-size: 16px;
-    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* 4개 지원 방향 */
+.support-directions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.direction-item {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.direction-item:nth-child(1) { animation-delay: 0.1s; }
+.direction-item:nth-child(2) { animation-delay: 0.2s; }
+.direction-item:nth-child(3) { animation-delay: 0.3s; }
+.direction-item:nth-child(4) { animation-delay: 0.4s; }
+
+.direction-cloud {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    color: #fff;
+    padding: 30px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.direction-cloud:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(59, 130, 246, 0.3);
+}
+
+.direction-cloud h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
     font-weight: 600;
 }
 
-.org-item p {
+.direction-cloud p {
     font-size: 14px;
-    color: #6b7280;
+    opacity: 0.9;
+    line-height: 1.5;
 }
 
-.center-director p {
-    color: #d1d5db;
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 콜센터 */
+.call-center {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.call-center-bar {
+    background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+    color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(30, 58, 138, 0.2);
+    animation: slideInUp 0.8s ease 0.5s both;
+}
+
+.call-center-bar h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.call-center-services {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.service-icon {
+    font-size: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+}
+
+.call-center-bar p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 공급자와 이용자 */
+.stakeholders {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.supplier-side, .user-side {
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 0.8s ease 0.7s both;
+}
+
+.stakeholder-group {
+    background: #f8f9fa;
+    padding: 30px 20px;
+    border-radius: 15px;
+    border: 2px solid #e5e7eb;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stakeholder-group:hover {
+    transform: translateY(-3px);
+    border-color: #3b82f6;
+}
+
+.stakeholder-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.stakeholder-group h5 {
+    color: #1e3a8a;
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.arrow {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.arrow-sale {
+    background: #f59e0b;
+}
+
+.arrow-purchase {
+    background: #10b981;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .support-directions {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .stakeholders {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .center-circle {
+        padding: 30px 40px;
+    }
+    
+    .center-circle h3 {
+        font-size: 20px;
+    }
+    
+    .direction-cloud {
+        padding: 25px 15px;
+    }
+    
+    .call-center-bar {
+        padding: 25px 20px;
+    }
+    
+    .call-center-services {
+        gap: 15px;
+    }
+    
+    .service-icon {
+        font-size: 28px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .center-circle {
+        padding: 25px 30px;
+    }
+    
+    .center-circle h3 {
+        font-size: 18px;
+    }
+    
+    .center-circle p {
+        font-size: 14px;
+    }
+    
+    .direction-cloud h4 {
+        font-size: 16px;
+    }
+    
+    .call-center-bar h4 {
+        font-size: 20px;
+    }
 }
 
 /* 연혁 */

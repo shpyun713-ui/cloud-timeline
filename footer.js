@@ -12,9 +12,9 @@ function createFooter() {
                 </div>
                 <div class="footer-section">
                     <h4>연락처</h4>
-                    <p>📞 02-1234-5678</p>
-                    <p>📧 info@cloudtimeline.go.kr</p>
-                    <p>📍 서울특별시 종로구 세종로 1</p>
+                    <p>📞 1522-0089(내선 2번 - 2번), 053-230-1959</p>
+                    <p>📧 cp@nia.or.kr</p>
+                    <p>📍 대구광역시 동구 첨단로 53</p>
                 </div>
                 <div class="footer-section">
                     <h4>바로가기</h4>
