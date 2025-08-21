@@ -1078,13 +1078,13 @@ body {
     border-color: #1e3a8a;
 }
 
-/* FAQ 목록 상세 */
-.faq-list-detailed {
+/* FAQ 목록 */
+.faq-list {
     max-width: 900px;
     margin: 0 auto;
 }
 
-.faq-item-detailed {
+.faq-item {
     border: 1px solid #e5e7eb;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -1092,7 +1092,7 @@ body {
     background: #fff;
 }
 
-.faq-question-detailed {
+.faq-question {
     background: #f9fafb;
     padding: 25px;
     cursor: pointer;
@@ -1102,11 +1102,11 @@ body {
     transition: background 0.3s;
 }
 
-.faq-question-detailed:hover {
+.faq-question:hover {
     background: #f3f4f6;
 }
 
-.faq-question-detailed h3 {
+.faq-question h3 {
     color: #1e3a8a;
     font-size: 18px;
     font-weight: 500;
@@ -1120,61 +1120,94 @@ body {
     transition: transform 0.3s;
 }
 
-.faq-answer-detailed {
+.faq-answer {
     padding: 0 25px;
     max-height: 0;
     overflow: hidden;
     transition: all 0.3s;
 }
 
-.faq-item-detailed.active .faq-answer-detailed {
+.faq-item.active .faq-answer {
     padding: 25px;
     max-height: 1000px;
 }
 
-.faq-item-detailed.active .faq-toggle {
+.faq-item.active .faq-toggle {
     transform: rotate(45deg);
 }
 
-.faq-answer-detailed p {
+.faq-answer p {
     color: #6b7280;
     line-height: 1.6;
     margin-bottom: 15px;
 }
 
-.faq-answer-detailed h4 {
+.faq-answer h4 {
     color: #1e3a8a;
     font-size: 16px;
     margin: 20px 0 10px 0;
     font-weight: 600;
 }
 
-.faq-answer-detailed ul,
-.faq-answer-detailed ol {
+.faq-answer ul,
+.faq-answer ol {
     color: #6b7280;
     margin-left: 20px;
     line-height: 1.6;
 }
 
-.faq-answer-detailed li {
+.faq-answer li {
     margin-bottom: 8px;
 }
 
-/* 추가 문의 */
-.additional-inquiry-section {
+/* 추가 문의 안내 */
+.contact-section {
     background: #f8f9fa;
 }
 
-.inquiry-content {
+.contact-info {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.inquiry-content h2 {
+.contact-info h2 {
     color: #1e3a8a;
     font-size: 28px;
     margin-bottom: 15px;
+}
+
+.contact-info p {
+    color: #6b7280;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.contact-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.contact-item {
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.contact-item h3 {
+    color: #1e3a8a;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.contact-item p {
+    color: #6b7280;
+    font-size: 16px;
+    margin: 0;
 }
 
 .inquiry-content > p {
@@ -1639,7 +1672,7 @@ body {
         justify-content: center;
     }
     
-    .faq-item-detailed {
+    .faq-item {
         flex-direction: column;
     }
     
