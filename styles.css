@@ -2038,67 +2038,13 @@ body {
 .k-card-expandable {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
-    position: relative;
 }
 
 .k-card-expandable:hover {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.02);
-    z-index: 1000;
-    background: white;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    border-radius: 20px;
-}
-
-
-
-/* 반응형 전체 화면 확장 */
-@media (max-width: 1200px) {
-    .k-card-expandable:hover {
-        width: 95vw;
-        max-width: none;
-    }
-}
-
-@media (max-width: 768px) {
-    .k-card-expandable:hover {
-        width: 100vw;
-        border-radius: 0;
-        top: 0;
-        left: 0;
-        transform: translate(0, 0) scale(1.02);
-        height: 100vh;
-        overflow-y: auto;
-    }
-    
-    .k-card-expandable:hover .k-card-inner {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .k-card-expandable:hover {
-        width: 100vw;
-        border-radius: 0;
-        top: 0;
-        left: 0;
-        transform: translate(0, 0) scale(1.02);
-        height: 100vh;
-        overflow-y: auto;
-    }
-    
-    .k-card-expandable:hover .k-card-inner {
-        padding: 16px;
-    }
-    
-    .expanded-kpis,
-    .expanded-policies ul,
-    .expanded-strategies .strategy-item ul {
-        grid-template-columns: 1fr;
-        gap: 12px;
-    }
+    width: 550px;
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    z-index: 10;
 }
 
 .k-card-expanded-content {
