@@ -1940,22 +1940,14 @@ body {
     margin: 80px 0;
     display: flex;
     align-items: center;
-    animation: timelineExpand 0.6s ease-out;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@keyframes timelineExpand {
-    0% {
-        transform: scaleY(0.8);
-        opacity: 0.7;
-    }
-    50% {
-        transform: scaleY(1.1);
-        opacity: 1;
-    }
-    100% {
-        transform: scaleY(1);
-        opacity: 1;
-    }
+.k-timeline-event.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 
@@ -2036,6 +2028,323 @@ body {
 .k-timeline-content-wrapper {
     position: relative;
     width: 100%;
+}
+
+.k-timeline-card {
+    position: relative;
+}
+
+/* 카드 확장 효과 */
+.k-card-expandable {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+}
+
+.k-card-expandable:hover {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.02);
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+
+
+/* 반응형 전체 화면 확장 */
+@media (max-width: 1200px) {
+    .k-card-expandable:hover {
+        width: 95vw;
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .k-card-expandable:hover {
+        width: 100vw;
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0) scale(1.02);
+        height: 100vh;
+        overflow-y: auto;
+    }
+    
+    .k-card-expandable:hover .k-card-inner {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .k-card-expandable:hover {
+        width: 100vw;
+        border-radius: 0;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0) scale(1.02);
+        height: 100vh;
+        overflow-y: auto;
+    }
+    
+    .k-card-expandable:hover .k-card-inner {
+        padding: 16px;
+    }
+    
+    .expanded-kpis,
+    .expanded-policies ul,
+    .expanded-strategies .strategy-item ul {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+}
+
+.k-card-expanded-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+
+.k-card-expandable:hover .k-card-expanded-content {
+    max-height: 1200px;
+    opacity: 1;
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 2px solid #e5e7eb;
+}
+
+/* 확장된 내용 스타일 */
+.expanded-header h3 {
+    color: #1e40af;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    text-align: center;
+    position: relative;
+}
+
+.expanded-header h3::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    width: 12px;
+    height: 12px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.expanded-header p {
+    color: #374151;
+    font-size: 14px;
+    margin: 0 0 16px 0;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.expanded-goal {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.expanded-goal strong {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.expanded-goal small {
+    font-size: 11px;
+    opacity: 0.9;
+}
+
+.expanded-kpis h4,
+.expanded-policies h4,
+.expanded-strategies h4 {
+    color: #1f2937;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 30px 0 16px 0;
+    padding-bottom: 8px;
+    position: relative;
+    padding-left: 30px;
+    grid-column: 1 / -1;
+}
+
+.expanded-kpis h4::before,
+.expanded-policies h4::before,
+.expanded-strategies h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    border-radius: 6px;
+    transform: translateY(-50%);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.expanded-kpis {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.expanded-kpis .kpi-item {
+    margin-bottom: 0;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    border-radius: 12px;
+    border-left: 4px solid #3b82f6;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.expanded-kpis .kpi-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.expanded-kpis .kpi-label {
+    display: block;
+    color: #3b82f6;
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.expanded-kpis .kpi-value {
+    display: block;
+    color: #1f2937;
+    font-weight: 500;
+    font-size: 13px;
+    margin-bottom: 2px;
+}
+
+.expanded-kpis .kpi-desc {
+    display: block;
+    color: #6b7280;
+    font-size: 11px;
+}
+
+.expanded-policies ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.expanded-policies li {
+    color: #374151;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 0;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 8px;
+    border-left: 3px solid #8b5cf6;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.expanded-policies li:hover {
+    transform: translateX(3px);
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.15);
+}
+
+.expanded-policies li::before {
+    content: "◆";
+    color: #8b5cf6;
+    font-weight: bold;
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.expanded-strategies .strategy-item {
+    margin-bottom: 24px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border-radius: 16px;
+    border: 2px solid #0ea5e9;
+    position: relative;
+}
+
+.expanded-strategies .strategy-item::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    width: 16px;
+    height: 16px;
+    background: #0ea5e9;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);
+}
+
+.expanded-strategies .strategy-item h5 {
+    color: #0ea5e9;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    padding-left: 20px;
+}
+
+.expanded-strategies .strategy-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.expanded-strategies .strategy-item li {
+    color: #374151;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 0;
+    padding: 6px 10px;
+    background: white;
+    border-radius: 6px;
+    border-left: 2px solid #0ea5e9;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.expanded-strategies .strategy-item li:hover {
+    transform: translateX(3px);
+    box-shadow: 0 2px 6px rgba(14, 165, 233, 0.15);
+}
+
+.expanded-strategies .strategy-item li::before {
+    content: "▶";
+    color: #0ea5e9;
+    font-weight: bold;
+    position: absolute;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
 }
 
 .k-card {
