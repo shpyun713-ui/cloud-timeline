@@ -447,6 +447,336 @@ body {
     color: #1e40af;
 }
 
+/* 법제도 정비 페이지 스타일 */
+.legal-framework-section {
+    padding: 80px 0;
+}
+
+.legal-framework-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.legal-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    gap: 20px;
+}
+
+.legal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.legal-icon {
+    font-size: 48px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.legal-content {
+    flex: 1;
+}
+
+.legal-content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 16px;
+}
+
+.legal-content p {
+    font-size: 15px;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.legal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.detail-item {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+.detail-item strong {
+    color: #3b82f6;
+}
+
+.guidelines-section {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.guidelines-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.guideline-timeline {
+    position: relative;
+    margin-top: 40px;
+}
+
+.guideline-timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.guideline-step {
+    position: relative;
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.guideline-step:last-child {
+    margin-bottom: 0;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+.step-content {
+    flex: 1;
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.step-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+.step-content p {
+    font-size: 15px;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.step-details {
+    list-style: none;
+    padding: 0;
+}
+
+.step-details li {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.5;
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.step-details li::before {
+    content: '•';
+    color: #3b82f6;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.contract-section {
+    padding: 80px 0;
+}
+
+.contract-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.contract-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.contract-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.contract-icon {
+    font-size: 48px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 20px;
+    margin: 0 auto 20px;
+}
+
+.contract-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 16px;
+}
+
+.contract-content p {
+    font-size: 15px;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contract-features {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.feature-item {
+    font-size: 14px;
+    color: #059669;
+    text-align: left;
+}
+
+.download-btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+}
+
+.roadmap-section {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.roadmap-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.roadmap-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.roadmap-phase {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roadmap-phase:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.phase-header {
+    text-align: center;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f3f4f6;
+}
+
+.phase-number {
+    display: inline-block;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.phase-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.phase-period {
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.phase-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.phase-content li {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.6;
+    padding: 8px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.phase-content li::before {
+    content: '✓';
+    color: #059669;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
 .page-title {
     font-size: 48px;
     font-weight: 700;
@@ -3449,6 +3779,42 @@ body {
         gap: 24px;
     }
     
+    /* 법제도 정비 페이지 모바일 대응 */
+    .legal-framework-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .legal-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+    }
+    
+    .guideline-timeline::before {
+        left: 20px;
+    }
+    
+    .guideline-step {
+        gap: 20px;
+    }
+    
+    .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .contract-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .roadmap-timeline {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
     .project-timeline-container {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -3596,6 +3962,43 @@ body {
         flex-direction: column;
         text-align: center;
         gap: 12px;
+    }
+    
+    /* 법제도 정비 페이지 모바일 대응 */
+    .legal-card {
+        padding: 20px 16px;
+    }
+    
+    .legal-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 36px;
+    }
+    
+    .guideline-timeline::before {
+        left: 15px;
+    }
+    
+    .guideline-step {
+        gap: 15px;
+    }
+    
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    .step-content {
+        padding: 20px 16px;
+    }
+    
+    .contract-card {
+        padding: 24px 20px;
+    }
+    
+    .roadmap-phase {
+        padding: 24px 20px;
     }
     
     .stats-grid {
