@@ -91,6 +91,60 @@ body {
     width: 100%;
 }
 
+/* 서브메뉴 스타일 */
+.nav-item {
+    position: relative;
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    min-width: 280px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    padding: 8px 0;
+}
+
+.nav-item:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.submenu-item {
+    display: block;
+    padding: 12px 20px;
+    color: #4b5563;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.submenu-item:last-child {
+    border-bottom: none;
+}
+
+.submenu-item:hover {
+    background: #f8fafc;
+    color: #3b82f6;
+}
+
+.submenu-item.active {
+    background: #eff6ff;
+    color: #3b82f6;
+    font-weight: 500;
+}
+
 /* 페이지 헤더 */
 .page-header {
     background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
@@ -2065,6 +2119,43 @@ body {
     border-top: 2px solid #e5e7eb;
 }
 
+/* 사업 카드 스타일 */
+.k-card-business {
+    background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+    border: 2px solid #16a34a;
+}
+
+.k-card-business .k-event-title {
+    color: #15803d;
+}
+
+.k-card-business .k-card-subtitle {
+    color: #166534;
+}
+
+.k-card-business .k-card-meta .meta-item {
+    background: #bbf7d0;
+    color: #15803d;
+}
+
+.k-card-business .k-card-tags .tag {
+    background: #dcfce7;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+
+/* 오른쪽 정렬 사업 카드 */
+.k-timeline-event.k-reverse .k-timeline-card {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.k-timeline-event.k-reverse .k-timeline-date-wrap {
+    right: auto;
+    left: 0;
+    top: -42px;
+}
+
 /* 확장된 내용 스타일 */
 .expanded-header h3 {
     color: #1e40af;
@@ -2215,6 +2306,7 @@ body {
     display: block;
     color: #1f2937;
     font-weight: 600;
+    letter-spacing: -1px;
     font-size: 13px;
     margin-bottom: 2px;
 }
@@ -2574,6 +2666,400 @@ body {
     font-size: 14px;
 }
 
+/* 행안부 지원 사업 타임라인 및 Goal Layer */
+.project-timeline-section {
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    padding: 80px 0;
+}
+
+.project-timeline-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+    align-items: start;
+}
+
+/* 확장된 카드 내부의 타임라인 컨테이너 */
+.k-card-expanded-content .project-timeline-container {
+    gap: 15px;
+    margin-top: 16px;
+    grid-template-columns: 1fr 2fr;
+}
+
+/* 중앙 타임라인 바 */
+.timeline-bar {
+    background: linear-gradient(180deg, #0ea5e9, #0284c7);
+    width: 8px;
+    height: 600px;
+    border-radius: 4px;
+    position: relative;
+    margin: 0 auto;
+}
+
+/* 확장된 카드 내부의 타임라인 바 */
+.k-card-expanded-content .timeline-bar {
+    height: 300px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 3px solid #0ea5e9;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timeline-marker:hover {
+    transform: translateX(-50%) scale(1.2);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.timeline-marker[data-year="2024"][data-month="10"] {
+    top: 0;
+}
+
+.timeline-marker[data-year="2024"][data-month="8"] {
+    top: 150px;
+}
+
+.timeline-marker[data-year="2024"][data-month="4"] {
+    top: 300px;
+}
+
+.timeline-marker[data-year="2023"][data-month="9"] {
+    top: 450px;
+}
+
+.marker-date {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #0ea5e9;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.marker-label {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 20px;
+    background: white;
+    color: #0ea5e9;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+    border: 1px solid #e0f2fe;
+}
+
+/* 행안부 지원 사업 타임라인 */
+.support-projects {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.project-year h3 {
+    color: #0ea5e9;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e0f2fe;
+    padding-bottom: 10px;
+}
+
+/* 상단 Goal Layer 스타일 */
+.goal-layer-top {
+    grid-column: 1 / -1;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.goal-layer-top h4 {
+    color: #0ea5e9;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.goal-progress-horizontal {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.goal-step-horizontal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 12px;
+    background: #f8fafc;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.goal-step-horizontal:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
+}
+
+.goal-step-horizontal.active {
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+}
+
+.goal-step-horizontal .step-icon {
+    font-size: 24px;
+}
+
+.goal-step-horizontal .step-title {
+    color: #1f2937;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* 확장된 카드 내부의 제목 스타일 */
+.k-card-expanded-content .project-year h4 {
+    color: #0ea5e9;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #e0f2fe;
+    padding-bottom: 6px;
+}
+
+.k-card-expanded-content .project-item h5 {
+    color: #1f2937;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.k-card-expanded-content .goal-layer h4 {
+    color: #0ea5e9;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+/* 확장된 카드 내부의 상단 Goal Layer */
+.k-card-expanded-content .goal-layer-top {
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.k-card-expanded-content .goal-layer-top h4 {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.k-card-expanded-content .goal-progress-horizontal {
+    gap: 12px;
+}
+
+.k-card-expanded-content .goal-step-horizontal {
+    padding: 12px 8px;
+    gap: 6px;
+}
+
+.k-card-expanded-content .goal-step-horizontal .step-icon {
+    font-size: 20px;
+}
+
+.k-card-expanded-content .goal-step-horizontal .step-title {
+    font-size: 11px;
+    line-height: 1.2;
+}
+
+.project-item h4 {
+    color: #1f2937;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.project-phases {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.phase {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+/* 확장된 카드 내부의 phase */
+.k-card-expanded-content .phase {
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.phase-number {
+    display: inline-block;
+    background: #0ea5e9;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* 확장된 카드 내부의 phase-number */
+.k-card-expanded-content .phase-number {
+    padding: 3px 8px;
+    font-size: 11px;
+    margin-bottom: 8px;
+}
+
+.phase ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.phase li {
+    color: #374151;
+    font-size: 13px;
+    margin-bottom: 6px;
+    padding-left: 16px;
+    position: relative;
+}
+
+/* 확장된 카드 내부의 phase li */
+.k-card-expanded-content .phase li {
+    font-size: 11px;
+    margin-bottom: 4px;
+    padding-left: 12px;
+}
+
+.phase li::before {
+    content: "•";
+    color: #0ea5e9;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.target-systems ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.target-systems li {
+    background: #f0f9ff;
+    color: #0ea5e9;
+    padding: 8px 16px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #e0f2fe;
+}
+
+/* 확장된 카드 내부의 target-systems li */
+.k-card-expanded-content .target-systems li {
+    padding: 6px 12px;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+/* Goal Layer */
+.goal-layer {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.goal-layer h3 {
+    color: #0ea5e9;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.goal-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.goal-step {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+/* 확장된 카드 내부의 goal-step */
+.k-card-expanded-content .goal-step {
+    padding: 12px;
+    gap: 12px;
+    border-radius: 8px;
+}
+
+.goal-step:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
+}
+
+.goal-step.active {
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+}
+
+.step-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.step-title {
+    color: #1f2937;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+/* 확장된 카드 내부의 아이콘과 텍스트 */
+.k-card-expanded-content .step-icon {
+    font-size: 20px;
+}
+
+.k-card-expanded-content .step-title {
+    font-size: 12px;
+    line-height: 1.3;
+}
+
 /* 통계 섹션 스타일 */
 .stats-section {
     background: #f8fafc;
@@ -2616,6 +3102,36 @@ body {
 
 /* 반응형 디자인 */
 @media (max-width: 768px) {
+    /* 서브메뉴 모바일 대응 */
+    .main-nav .nav-list {
+        gap: 16px;
+    }
+    
+    .submenu {
+        min-width: 240px;
+        left: -20px;
+    }
+    
+    .project-timeline-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .timeline-bar {
+        height: 400px;
+        margin: 20px auto;
+    }
+    
+    .project-phases {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .goal-progress-horizontal {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
     .k-timeline ul::before {
         left: 20px;
     }
@@ -2667,6 +3183,20 @@ body {
 }
 
 @media (max-width: 480px) {
+    /* 서브메뉴 모바일 대응 */
+    .main-nav .nav-list {
+        gap: 12px;
+    }
+    
+    .nav-link {
+        font-size: 14px;
+    }
+    
+    .submenu {
+        min-width: 200px;
+        left: -30px;
+    }
+    
     .stats-grid {
         grid-template-columns: 1fr;
     }
