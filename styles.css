@@ -19,48 +19,48 @@ body {
 }
 
 /* 헤더 스타일 */
-.header {
+.site-header {
     background: #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.08);
     border-bottom: 1px solid #f3f4f6;
 }
 
-.header-main {
+.site-header__main {
     padding: 16px 0;
 }
 
-.header-main .container {
+.site-header__main .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
+.site-header__logo {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.logo-text {
+.site-header__logo-text {
     font-size: 24px;
     font-weight: 700;
     color: #3b82f6;
     line-height: 1;
 }
 
-.logo-sub {
+.site-header__logo-subtitle {
     font-size: 14px;
     color: #6b7280;
     font-weight: 400;
 }
 
-.main-nav .nav-list {
+.site-header__nav .site-header__nav-list {
     display: flex;
     list-style: none;
     gap: 32px;
 }
 
-.nav-link {
+.site-header__nav-link {
     text-decoration: none;
     color: #4b5563;
     font-weight: 500;
@@ -70,12 +70,12 @@ body {
     font-size: 15px;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.site-header__nav-link:hover,
+.site-header__nav-link--active {
     color: #3b82f6;
 }
 
-.nav-link::after {
+.site-header__nav-link::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -86,8 +86,8 @@ body {
     transition: width 0.3s;
 }
 
-.nav-link:hover::after,
-.nav-link.active::after {
+.site-header__nav-link:hover::after,
+.site-header__nav-link--active::after {
     width: 100%;
 }
 
@@ -140,7 +140,7 @@ body {
 }
 
 /* 페이지 헤더 */
-.page-header {
+.page-hero {
     background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
     color: #fff;
     padding: 60px 0;
@@ -148,42 +148,42 @@ body {
 }
 
 /* 해외 클라우드 동향 페이지 스타일 */
-.overview-section {
+.content-section {
     padding: 60px 0;
     background: #f8fafc;
 }
 
-.overview-content {
+.content-section__overview {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.overview-content h2 {
+.content-section__overview h2 {
     font-size: 32px;
     font-weight: 700;
     color: #1f2937;
     margin-bottom: 20px;
 }
 
-.overview-content p {
+.content-section__overview p {
     font-size: 18px;
     color: #6b7280;
     line-height: 1.7;
 }
 
-.trends-table-section {
+.data-table-section {
     padding: 80px 0;
 }
 
-.trends-table-container {
+.data-table-container {
     overflow-x: auto;
     margin-top: 40px;
     border-radius: 16px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.trends-table {
+.data-table {
     width: 100%;
     min-width: 1000px;
     background: #fff;
@@ -191,7 +191,7 @@ body {
     overflow: hidden;
 }
 
-.table-header {
+.data-table__header {
     display: grid;
     grid-template-columns: 1fr 1.5fr 0.8fr 2fr 1.5fr;
     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
@@ -4153,36 +4153,36 @@ body {
         gap: 16px;
     }
     
-    .nav-item[data-menu] .submenu {
+    .site-header__nav-item[data-menu] .site-header__submenu {
         min-width: 240px;
         left: -20px;
     }
     
     /* 해외 클라우드 동향 페이지 모바일 대응 */
-    .overview-content h2 {
+    .content-section__overview h2 {
         font-size: 28px;
     }
     
-    .overview-content p {
+    .content-section__overview p {
         font-size: 16px;
     }
     
-    .trends-table-container {
+    .data-table-container {
         margin: 20px -20px 0;
         border-radius: 0;
     }
     
-    .trends-table {
+    .data-table {
         min-width: 800px;
     }
     
-    .table-header,
-    .table-row {
+    .data-table__header,
+    .data-table__row {
         grid-template-columns: 1fr 1.2fr 0.6fr 1.5fr 1.2fr;
     }
     
-    .header-cell,
-    .table-cell {
+    .data-table__header-cell,
+    .data-table__cell {
         padding: 16px 12px;
         font-size: 13px;
     }
@@ -4397,31 +4397,31 @@ body {
         font-size: 14px;
     }
     
-    .nav-item[data-menu] .submenu {
+    .site-header__nav-item[data-menu] .site-header__submenu {
         min-width: 200px;
         left: -30px;
     }
     
     /* 해외 클라우드 동향 페이지 모바일 대응 */
-    .overview-content h2 {
+    .content-section__overview h2 {
         font-size: 24px;
     }
     
-    .overview-content p {
+    .content-section__overview p {
         font-size: 15px;
     }
     
-    .trends-table {
+    .data-table {
         min-width: 700px;
     }
     
-    .table-header,
-    .table-row {
+    .data-table__header,
+    .data-table__row {
         grid-template-columns: 1fr 1fr 0.5fr 1.2fr 1fr;
     }
     
-    .header-cell,
-    .table-cell {
+    .data-table__header-cell,
+    .data-table__cell {
         padding: 12px 8px;
         font-size: 12px;
     }
