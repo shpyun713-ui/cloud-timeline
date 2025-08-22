@@ -2041,7 +2041,7 @@ body {
 }
 
 .k-card-expandable:hover {
-    width: 550px;
+    width: 700px;
     transform: scale(1.02);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
     z-index: 10;
@@ -2130,6 +2130,10 @@ body {
     grid-column: 1 / -1;
 }
 
+.expanded-policies h4 {
+    padding-left: 35px;
+}
+
 .expanded-kpis h4::before,
 .expanded-policies h4::before,
 .expanded-strategies h4::before {
@@ -2145,6 +2149,10 @@ body {
     box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
 }
 
+.expanded-policies h4::before {
+    left: 5px;
+}
+
 .expanded-kpis {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2152,14 +2160,30 @@ body {
     margin-bottom: 20px;
 }
 
-.expanded-kpis .kpi-item {
-    margin-bottom: 0;
-    padding: 12px 16px;
-    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+.expanded-kpis .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 16px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.expanded-kpis .kpi-card {
+    background: white;
     border-radius: 12px;
     border-left: 4px solid #3b82f6;
+    padding: 24px 20px;
     position: relative;
     transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+    min-width: 200px;
+}
+
+.expanded-kpis .kpi-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
 }
 
 .expanded-kpis .kpi-item:hover {
@@ -2167,18 +2191,30 @@ body {
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
 }
 
+.expanded-kpis .kpi-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.expanded-kpis .kpi-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
 .expanded-kpis .kpi-label {
     display: block;
     color: #3b82f6;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 14px;
     margin-bottom: 4px;
 }
 
 .expanded-kpis .kpi-value {
     display: block;
     color: #1f2937;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 13px;
     margin-bottom: 2px;
 }
@@ -2186,7 +2222,8 @@ body {
 .expanded-kpis .kpi-desc {
     display: block;
     color: #6b7280;
-    font-size: 11px;
+    font-size: 12px;
+    line-height: 1.4;
 }
 
 .expanded-policies ul {
@@ -2203,7 +2240,7 @@ body {
     font-size: 13px;
     line-height: 1.4;
     margin-bottom: 0;
-    padding: 8px 12px;
+    padding: 8px 12px 8px 24px;
     background: white;
     border-radius: 8px;
     border-left: 3px solid #8b5cf6;
@@ -2217,13 +2254,66 @@ body {
 }
 
 .expanded-policies li::before {
-    content: "◆";
-    color: #8b5cf6;
-    font-weight: bold;
+    content: "";
     position: absolute;
-    left: 8px;
+    left: 12px;
     top: 50%;
     transform: translateY(-50%);
+    width: 0;
+    height: 0;
+}
+
+/* 간단한 정책 스타일 */
+.policy-simple {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.policy-simple-item {
+    background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+    border: 2px solid #8b5cf6;
+    border-radius: 16px;
+    padding: 20px 16px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.policy-simple-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2);
+}
+
+.policy-simple-item::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    background: #8b5cf6;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
+}
+
+.policy-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.policy-text {
+    color: #1f2937;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
 }
 
 .expanded-strategies .strategy-item {
@@ -2291,6 +2381,70 @@ body {
     top: 50%;
     transform: translateY(-50%);
     font-size: 10px;
+}
+
+/* 간단한 전략 스타일 */
+.strategy-simple {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.strategy-simple-item {
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border: 2px solid #0ea5e9;
+    border-radius: 16px;
+    padding: 20px 16px;
+    text-align: center;
+    position: relative;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.strategy-simple-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.2);
+}
+
+.strategy-simple-item::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    background: #0ea5e9;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 8px rgba(14, 165, 233, 0.3);
+}
+
+.strategy-icon {
+    font-size: 28px;
+    margin-bottom: 4px;
+}
+
+.strategy-number {
+    display: block;
+    color: #0ea5e9;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.strategy-title {
+    display: block;
+    color: #1f2937;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    word-break: keep-all;
+    word-wrap: break-word;
+    white-space: pre-line;
 }
 
 .k-card {
