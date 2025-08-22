@@ -340,10 +340,10 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.metric-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
-}
+    .metric-card.clicked {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+    }
 
 .metric-icon {
     font-size: 48px;
@@ -401,10 +401,10 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.analysis-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
-}
+    .analysis-card.clicked {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+    }
 
 .analysis-header {
     display: flex;
@@ -469,10 +469,10 @@ body {
     gap: 20px;
 }
 
-.legal-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
-}
+    .legal-card.clicked {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+    }
 
 .legal-icon {
     font-size: 48px;
@@ -635,10 +635,10 @@ body {
     text-align: center;
 }
 
-.contract-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
-}
+    .contract-card.clicked {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+    }
 
 .contract-icon {
     font-size: 48px;
@@ -719,10 +719,10 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.roadmap-phase:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
-}
+    .roadmap-phase.clicked {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+    }
 
 .phase-header {
     text-align: center;
@@ -799,10 +799,10 @@ body {
     gap: 20px;
 }
 
-.project-content-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
-}
+    .project-content-card.clicked {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+    }
 
 .content-icon {
     font-size: 48px;
@@ -1050,10 +1050,10 @@ body {
     gap: 20px;
 }
 
-.support-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
-}
+    .support-card.clicked {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+    }
 
 .support-icon {
     font-size: 48px;
@@ -1127,10 +1127,10 @@ body {
     text-align: center;
 }
 
-.performance-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
-}
+    .performance-card.clicked {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+    }
 
 .performance-icon {
     font-size: 48px;
@@ -1351,7 +1351,7 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.intro-card:hover {
+.intro-card.clicked {
     transform: translateY(-5px);
     box-shadow: 0 8px 30px rgba(0,0,0,0.12);
 }
@@ -3129,12 +3129,12 @@ body {
     overflow: hidden;
 }
 
-.k-card-expandable:hover {
-    width: 700px;
-    transform: scale(1.02);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-}
+    .k-card-expandable.expanded {
+        width: 700px;
+        transform: scale(1.02);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+    }
 
 .k-card-expanded-content {
     max-height: 0;
@@ -3146,13 +3146,13 @@ body {
     padding-bottom: 20px;
 }
 
-.k-card-expandable:hover .k-card-expanded-content {
-    max-height: 1200px;
-    opacity: 1;
-    margin-top: 24px;
-    padding-top: 24px;
-    border-top: 2px solid #e5e7eb;
-}
+    .k-card-expandable.expanded .k-card-expanded-content {
+        max-height: 1200px;
+        opacity: 1;
+        margin-top: 24px;
+        padding-top: 24px;
+        border-top: 2px solid #e5e7eb;
+    }
 
 /* 사업 카드 스타일 */
 .k-card-business {
@@ -3307,12 +3307,12 @@ body {
     min-width: 200px;
 }
 
-.expanded-kpis .kpi-card:hover {
+.expanded-kpis .kpi-card.clicked {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
 }
 
-.expanded-kpis .kpi-item:hover {
+.expanded-kpis .kpi-item.clicked {
     transform: translateX(5px);
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
 }
@@ -3375,7 +3375,7 @@ body {
     transition: all 0.3s ease;
 }
 
-.expanded-policies li:hover {
+.expanded-policies li.clicked {
     transform: translateX(3px);
     box-shadow: 0 2px 8px rgba(139, 92, 246, 0.15);
 }
@@ -3854,7 +3854,7 @@ body {
     text-align: center;
 }
 
-.goal-step-horizontal:hover {
+.goal-step-horizontal.clicked {
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
 }
@@ -4632,7 +4632,7 @@ body {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
-    .model-type-card:hover {
+    .model-type-card.clicked {
         transform: translateY(-4px);
         box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
     }
@@ -4981,7 +4981,7 @@ body {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
-    .purpose-card:hover {
+    .purpose-card.clicked {
         transform: translateY(-4px);
         box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
     }
@@ -5135,7 +5135,7 @@ body {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     
-    .roadmap-phase:hover {
+    .roadmap-phase.clicked {
         transform: translateY(-4px);
         box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
     }
