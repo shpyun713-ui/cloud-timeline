@@ -4586,6 +4586,32 @@ body {
         font-size: 36px;
     }
     
+    /* 민간 SaaS 활용촉진 페이지 모바일 대응 */
+    .purpose-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .strategy-timeline::before {
+        left: 20px;
+    }
+    
+    .strategy-step {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .strategy-step .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .roadmap-timeline {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
     /* 활용모델 페이지 스타일 */
     .model-types-section {
         padding: 80px 0;
@@ -4930,6 +4956,238 @@ body {
     .result-details li::before {
         content: '•';
         color: #3b82f6;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+    
+    /* 민간 SaaS 활용촉진 페이지 스타일 */
+    .purpose-section {
+        padding: 80px 0;
+    }
+    
+    .purpose-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 32px;
+        margin-top: 40px;
+    }
+    
+    .purpose-card {
+        background: #fff;
+        border-radius: 16px;
+        padding: 32px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .purpose-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .purpose-icon {
+        font-size: 48px;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .purpose-content h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 16px;
+    }
+    
+    .purpose-content p {
+        font-size: 15px;
+        color: #4b5563;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .purpose-details {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .purpose-details li {
+        font-size: 14px;
+        color: #6b7280;
+        line-height: 1.5;
+        padding: 6px 0;
+        padding-left: 20px;
+        position: relative;
+    }
+    
+    .purpose-details li::before {
+        content: '•';
+        color: #3b82f6;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+    
+    .strategy-section {
+        padding: 80px 0;
+        background: #f8fafc;
+    }
+    
+    .strategy-timeline {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .strategy-timeline::before {
+        content: '';
+        position: absolute;
+        left: 30px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%);
+    }
+    
+    .strategy-step {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+    .strategy-step .step-number {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 700;
+        flex-shrink: 0;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+    
+    .strategy-step .step-content {
+        flex: 1;
+        background: #fff;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .strategy-step .step-content h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 12px;
+    }
+    
+    .strategy-step .step-content p {
+        font-size: 15px;
+        color: #4b5563;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .success-cases-section {
+        padding: 80px 0;
+    }
+    
+    .success-cases-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 32px;
+        margin-top: 40px;
+    }
+    
+    .roadmap-section {
+        padding: 80px 0;
+        background: #f8fafc;
+    }
+    
+    .roadmap-container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    
+    .roadmap-timeline {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 32px;
+        margin-top: 40px;
+    }
+    
+    .roadmap-phase {
+        background: #fff;
+        border-radius: 16px;
+        padding: 32px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .roadmap-phase:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .phase-header {
+        text-align: center;
+        margin-bottom: 24px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #e5e7eb;
+    }
+    
+    .phase-number {
+        display: inline-block;
+        background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 12px;
+    }
+    
+    .phase-title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 8px;
+    }
+    
+    .phase-period {
+        font-size: 16px;
+        color: #6b7280;
+        font-weight: 500;
+    }
+    
+    .phase-content ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .phase-content li {
+        font-size: 15px;
+        color: #4b5563;
+        line-height: 1.6;
+        padding: 8px 0;
+        padding-left: 20px;
+        position: relative;
+    }
+    
+    .phase-content li::before {
+        content: '✓';
+        color: #059669;
         font-weight: bold;
         position: absolute;
         left: 0;
