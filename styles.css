@@ -147,6 +147,306 @@ body {
     text-align: center;
 }
 
+/* 해외 클라우드 동향 페이지 스타일 */
+.overview-section {
+    padding: 60px 0;
+    background: #f8fafc;
+}
+
+.overview-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.overview-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 20px;
+}
+
+.overview-content p {
+    font-size: 18px;
+    color: #6b7280;
+    line-height: 1.7;
+}
+
+.trends-table-section {
+    padding: 80px 0;
+}
+
+.trends-table-container {
+    overflow-x: auto;
+    margin-top: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.trends-table {
+    width: 100%;
+    min-width: 1000px;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.table-header {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 0.8fr 2fr 1.5fr;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: #fff;
+    font-weight: 600;
+}
+
+.header-cell {
+    padding: 20px 16px;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+}
+
+.header-cell:last-child {
+    border-right: none;
+}
+
+.table-row {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 0.8fr 2fr 1.5fr;
+    border-bottom: 1px solid #f3f4f6;
+    transition: background-color 0.3s ease;
+}
+
+.table-row:hover {
+    background-color: #f8fafc;
+}
+
+.table-row:last-child {
+    border-bottom: none;
+}
+
+.table-cell {
+    padding: 20px 16px;
+    border-right: 1px solid #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.table-cell:last-child {
+    border-right: none;
+}
+
+.country-cell {
+    justify-content: flex-start;
+}
+
+.country-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.country-flag {
+    width: 32px;
+    height: 24px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.country-name {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.law-cell {
+    font-weight: 500;
+    color: #3b82f6;
+}
+
+.year-cell {
+    font-weight: 600;
+    color: #059669;
+    background: #ecfdf5;
+    border-radius: 8px;
+    padding: 8px 12px;
+}
+
+.content-cell {
+    text-align: left;
+    justify-content: flex-start;
+    color: #4b5563;
+}
+
+.summary-cell {
+    text-align: left;
+    justify-content: flex-start;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.chart-section {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.chart-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.chart-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.chart-card h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.chart-wrapper {
+    height: 400px;
+    position: relative;
+}
+
+.metrics-section {
+    padding: 80px 0;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.metric-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.metric-icon {
+    font-size: 48px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.metric-content {
+    flex: 1;
+}
+
+.metric-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #3b82f6;
+    margin-bottom: 8px;
+}
+
+.metric-label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.metric-detail {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+.policy-analysis-section {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.analysis-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.analysis-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.analysis-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.analysis-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.analysis-icon {
+    font-size: 32px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 16px;
+}
+
+.analysis-header h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+}
+
+.analysis-content p {
+    font-size: 15px;
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.analysis-highlight {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border-left: 4px solid #3b82f6;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1e40af;
+}
+
 .page-title {
     font-size: 48px;
     font-weight: 700;
@@ -3106,6 +3406,49 @@ body {
         left: -20px;
     }
     
+    /* 해외 클라우드 동향 페이지 모바일 대응 */
+    .overview-content h2 {
+        font-size: 28px;
+    }
+    
+    .overview-content p {
+        font-size: 16px;
+    }
+    
+    .trends-table-container {
+        margin: 20px -20px 0;
+        border-radius: 0;
+    }
+    
+    .trends-table {
+        min-width: 800px;
+    }
+    
+    .table-header,
+    .table-row {
+        grid-template-columns: 1fr 1.2fr 0.6fr 1.5fr 1.2fr;
+    }
+    
+    .header-cell,
+    .table-cell {
+        padding: 16px 12px;
+        font-size: 13px;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .metric-card {
+        padding: 24px 20px;
+    }
+    
+    .analysis-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
     .project-timeline-container {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -3189,6 +3532,70 @@ body {
     .nav-item[data-menu] .submenu {
         min-width: 200px;
         left: -30px;
+    }
+    
+    /* 해외 클라우드 동향 페이지 모바일 대응 */
+    .overview-content h2 {
+        font-size: 24px;
+    }
+    
+    .overview-content p {
+        font-size: 15px;
+    }
+    
+    .trends-table {
+        min-width: 700px;
+    }
+    
+    .table-header,
+    .table-row {
+        grid-template-columns: 1fr 1fr 0.5fr 1.2fr 1fr;
+    }
+    
+    .header-cell,
+    .table-cell {
+        padding: 12px 8px;
+        font-size: 12px;
+    }
+    
+    .country-flag {
+        width: 28px;
+        height: 21px;
+    }
+    
+    .country-name {
+        font-size: 13px;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .metric-card {
+        padding: 20px 16px;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .metric-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 36px;
+    }
+    
+    .metric-number {
+        font-size: 28px;
+    }
+    
+    .analysis-card {
+        padding: 24px 20px;
+    }
+    
+    .analysis-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
     }
     
     .stats-grid {

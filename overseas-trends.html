@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>해외 클라우드 동향 - 행정·공공기관 클라우드전문지원센터</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="header-main">
+            <div class="container">
+                <div class="logo-section">
+                    <h1 class="logo">
+                        <a href="index.html" style="text-decoration: none; color: inherit;">
+                            <span class="logo-text">행정·공공기관</span>
+                            <span class="logo-sub">클라우드전문지원센터</span>
+                        </a>
+                    </h1>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="intro.html" class="nav-link">센터 소개</a>
+                        </li>
+                        <li class="nav-item" data-menu="policy">
+                            <a href="timeline.html" class="nav-link">정책 소개</a>
+                        </li>
+                        <li class="nav-item" data-menu="project">
+                            <a href="projects.html" class="nav-link">전환 사업</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="resources.html" class="nav-link">자료실</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="faq.html" class="nav-link">자주하는질문</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 페이지 헤더 -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">해외 클라우드 동향</h1>
+            <p class="page-subtitle">세계 주요국의 클라우드 정책과 동향을 한눈에 확인하세요</p>
+        </div>
+    </section>
+
+    <!-- 해외 동향 개요 -->
+    <section class="section overview-section">
+        <div class="container">
+            <div class="overview-content">
+                <h2>글로벌 클라우드 정책 현황</h2>
+                <p>세계 주요국들은 디지털 전환을 위한 클라우드 정책을 적극적으로 추진하고 있습니다. 각국의 정책 방향과 성과를 비교 분석하여 한국의 클라우드 발전 방향을 제시합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 국가별 클라우드 동향 테이블 -->
+    <section class="section trends-table-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">국가별 클라우드 정책 동향</h2>
+                <p class="section-subtitle">주요국의 클라우드 정책과 성과를 비교해보세요</p>
+            </div>
+            
+            <div class="trends-table-container">
+                <div class="trends-table">
+                    <div class="table-header">
+                        <div class="header-cell country-header">국가</div>
+                        <div class="header-cell law-header">근기법 혹은 상위 계획</div>
+                        <div class="header-cell year-header">연도</div>
+                        <div class="header-cell content-header">주요 내용</div>
+                        <div class="header-cell summary-header">동향 요약</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell country-cell">
+                            <div class="country-info">
+                                <img src="https://flagcdn.com/w40/us.png" alt="미국 국기" class="country-flag">
+                                <span class="country-name">미국</span>
+                            </div>
+                        </div>
+                        <div class="table-cell law-cell">Cloud First Policy</div>
+                        <div class="table-cell year-cell">2010</div>
+                        <div class="table-cell content-cell">연방정부 기관의 클라우드 우선 정책</div>
+                        <div class="table-cell summary-cell">클라우드 우선 원칙으로 정부 IT 현대화</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell country-cell">
+                            <div class="country-info">
+                                <img src="https://flagcdn.com/w40/gb.png" alt="영국 국기" class="country-flag">
+                                <span class="country-name">영국</span>
+                            </div>
+                        </div>
+                        <div class="table-cell law-cell">G-Cloud Framework</div>
+                        <div class="table-cell year-cell">2012</div>
+                        <div class="table-cell content-cell">정부 클라우드 서비스 프레임워크</div>
+                        <div class="table-cell summary-cell">클라우드 서비스 표준화 및 공급망 구축</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell country-cell">
+                            <div class="country-info">
+                                <img src="https://flagcdn.com/w40/de.png" alt="독일 국기" class="country-flag">
+                                <span class="country-name">독일</span>
+                            </div>
+                        </div>
+                        <div class="table-cell law-cell">Cloud Computing Action Plan</div>
+                        <div class="table-cell year-cell">2010</div>
+                        <div class="table-cell content-cell">클라우드 컴퓨팅 액션 플랜</div>
+                        <div class="table-cell summary-cell">데이터 보안 중심의 클라우드 정책</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell country-cell">
+                            <div class="country-info">
+                                <img src="https://flagcdn.com/w40/jp.png" alt="일본 국기" class="country-flag">
+                                <span class="country-name">일본</span>
+                            </div>
+                        </div>
+                        <div class="table-cell law-cell">Cloud by Default</div>
+                        <div class="table-cell year-cell">2018</div>
+                        <div class="table-cell content-cell">클라우드 우선 원칙</div>
+                        <div class="table-cell summary-cell">디지털 정부 구현을 위한 클라우드 전환</div>
+                    </div>
+                    
+                    <div class="table-row">
+                        <div class="table-cell country-cell">
+                            <div class="country-info">
+                                <img src="https://flagcdn.com/w40/sg.png" alt="싱가포르 국기" class="country-flag">
+                                <span class="country-name">싱가포르</span>
+                            </div>
+                        </div>
+                        <div class="table-cell law-cell">Government Cloud</div>
+                        <div class="table-cell year-cell">2011</div>
+                        <div class="table-cell content-cell">정부 클라우드 인프라 구축</div>
+                        <div class="table-cell summary-cell">스마트 네이션을 위한 클라우드 기반</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 클라우드 도입률 비교 차트 -->
+    <section class="section chart-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">주요국 클라우드 도입률 비교</h2>
+                <p class="section-subtitle">2024년 기준 정부 기관 클라우드 전환 현황</p>
+            </div>
+            
+            <div class="chart-container">
+                <div class="chart-card">
+                    <h3>정부 기관 클라우드 도입률</h3>
+                    <div class="chart-wrapper">
+                        <canvas id="cloudAdoptionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 성과 지표 카드 -->
+    <section class="section metrics-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">클라우드 전환 성과 지표</h2>
+                <p class="section-subtitle">주요국의 클라우드 정책 성과를 수치로 확인하세요</p>
+            </div>
+            
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon">💰</div>
+                    <div class="metric-content">
+                        <div class="metric-number">35%</div>
+                        <div class="metric-label">평균 비용 절감률</div>
+                        <div class="metric-detail">클라우드 전환 후 IT 운영 비용</div>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">⚡</div>
+                    <div class="metric-content">
+                        <div class="metric-number">2.5배</div>
+                        <div class="metric-label">성능 향상률</div>
+                        <div class="metric-detail">시스템 응답 속도 개선</div>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">🔄</div>
+                    <div class="metric-content">
+                        <div class="metric-number">60%</div>
+                        <div class="metric-label">배포 시간 단축</div>
+                        <div class="metric-detail">신규 서비스 출시 기간</div>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <div class="metric-icon">🛡️</div>
+                    <div class="metric-content">
+                        <div class="metric-number">99.9%</div>
+                        <div class="metric-label">가용성 향상</div>
+                        <div class="metric-detail">시스템 안정성 개선</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 정책 방향성 분석 -->
+    <section class="section policy-analysis-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">정책 방향성 분석</h2>
+                <p class="section-subtitle">주요국의 클라우드 정책 특징과 시사점</p>
+            </div>
+            
+            <div class="analysis-grid">
+                <div class="analysis-card">
+                    <div class="analysis-header">
+                        <div class="analysis-icon">🇺🇸</div>
+                        <h3>미국: 클라우드 우선 원칙</h3>
+                    </div>
+                    <div class="analysis-content">
+                        <p>연방정부의 모든 IT 프로젝트에서 클라우드 솔루션을 우선적으로 고려하는 정책으로, 빠른 디지털 전환과 비용 효율성을 달성했습니다.</p>
+                        <div class="analysis-highlight">
+                            <strong>핵심 성과:</strong> 연간 30억 달러 IT 비용 절감
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="analysis-card">
+                    <div class="analysis-header">
+                        <div class="analysis-icon">🇬🇧</div>
+                        <h3>영국: 표준화된 프레임워크</h3>
+                    </div>
+                    <div class="analysis-content">
+                        <p>G-Cloud 프레임워크를 통해 클라우드 서비스 공급업체와 정부 간의 표준화된 거래 체계를 구축했습니다.</p>
+                        <div class="analysis-highlight">
+                            <strong>핵심 성과:</strong> 4,000개 이상의 공급업체 등록
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="analysis-card">
+                    <div class="analysis-header">
+                        <div class="analysis-icon">🇩🇪</div>
+                        <h3>독일: 데이터 보안 중심</h3>
+                    </div>
+                    <div class="analysis-content">
+                        <p>데이터 주권과 보안을 최우선으로 하는 클라우드 정책으로, EU GDPR 규정을 준수하는 안전한 클라우드 환경을 구축했습니다.</p>
+                        <div class="analysis-highlight">
+                            <strong>핵심 성과:</strong> 100% 데이터 보안 준수
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>클라우드 타임라인 센터</h3>
+                    <p>정부 클라우드 정책과 전환 사업을 지원하는 전문 기관</p>
+                </div>
+                <div class="footer-section">
+                    <h4>연락처</h4>
+                    <p>📞 02-1234-5678</p>
+                    <p>📧 info@cloudtimeline.go.kr</p>
+                    <p>📍 서울특별시 종로구 세종로 1</p>
+                </div>
+                <div class="footer-section">
+                    <h4>바로가기</h4>
+                    <ul>
+                        <li><a href="intro.html">센터 소개</a></li>
+                        <li><a href="timeline.html">정책 타임라인</a></li>
+                        <li><a href="projects.html">전환 사업</a></li>
+                        <li><a href="resources.html">자료실</a></li>
+                        <li><a href="faq.html">자주하는질문</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 클라우드 타임라인 센터. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="footer.js"></script>
+    <script src="menu-manager.js"></script>
+    
+    <!-- 차트 초기화 스크립트 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 클라우드 도입률 차트
+            const ctx = document.getElementById('cloudAdoptionChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['미국', '영국', '독일', '일본', '싱가포르', '한국'],
+                    datasets: [{
+                        label: '정부 기관 클라우드 도입률 (%)',
+                        data: [85, 78, 72, 65, 82, 45],
+                        backgroundColor: [
+                            'rgba(59, 130, 246, 0.8)',
+                            'rgba(16, 185, 129, 0.8)',
+                            'rgba(245, 158, 11, 0.8)',
+                            'rgba(239, 68, 68, 0.8)',
+                            'rgba(139, 92, 246, 0.8)',
+                            'rgba(236, 72, 153, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgba(59, 130, 246, 1)',
+                            'rgba(16, 185, 129, 1)',
+                            'rgba(245, 158, 11, 1)',
+                            'rgba(239, 68, 68, 1)',
+                            'rgba(139, 92, 246, 1)',
+                            'rgba(236, 72, 153, 1)'
+                        ],
+                        borderWidth: 2,
+                        borderRadius: 8,
+                        borderSkipped: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            titleColor: '#fff',
+                            bodyColor: '#fff',
+                            borderColor: '#3b82f6',
+                            borderWidth: 1,
+                            cornerRadius: 8,
+                            displayColors: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                },
+                                font: {
+                                    size: 12
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)',
+                                lineWidth: 1
+                            }
+                        },
+                        x: {
+                            ticks: {
+                                font: {
+                                    size: 12
+                                }
+                            },
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    animation: {
+                        duration: 2000,
+                        easing: 'easeOutQuart'
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
