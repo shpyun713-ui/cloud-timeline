@@ -14,17 +14,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const stageType = this.getAttribute('data-stage');
             console.log('클릭된 라이프사이클 단계:', stageType);
             
-            // 선택 상태 토글
+            // 선택 상태 토글 (시각적 효과만)
             if (this.classList.contains('selected')) {
                 this.classList.remove('selected');
-                selectedStages.delete(stageType);
             } else {
                 this.classList.add('selected');
-                selectedStages.add(stageType);
             }
             
-            // 필터링 실행
-            applyFilters();
+            // 모든 가이드 표시
+            showAllGuides();
         });
     });
     
@@ -71,6 +69,26 @@ document.addEventListener('DOMContentLoaded', function() {
             applyFilters();
         });
     });
+    
+    // 모든 가이드 표시 함수
+    function showAllGuides() {
+        const guidelineItems = document.querySelectorAll('.guideline-item');
+        guidelineItems.forEach(item => {
+            item.classList.add('visible');
+            item.classList.remove('filtered');
+        });
+        
+        // 필터 상태 초기화
+        clearFilterStatus();
+    }
+    
+    // 필터 상태 초기화 함수
+    function clearFilterStatus() {
+        const statusContainer = document.querySelector('.filter-status');
+        if (statusContainer) {
+            statusContainer.remove();
+        }
+    }
     
     // 필터링 함수
     function applyFilters() {
