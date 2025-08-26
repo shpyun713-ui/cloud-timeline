@@ -12,7 +12,7 @@
 - **정책 타임라인** (`timeline.html`): 정부 클라우드 정책의 발전 과정을 시간순으로 표시
 - **전환 사업** (`projects.html`): 진행 중인 클라우드 전환 사업 현황 및 상세 정보
 - **자료실** (`resources.html`): 클라우드 전환 관련 자료 다운로드 및 검색
-- **자주하는질문** (`faq.html`): 클라우드 전환 관련 FAQ 및 카테고리별 분류
+- **자주 찾는 질문** (`faq.html`): 클라우드 전환 관련 FAQ 및 카테고리별 분류
 
 ## 🏠 페이지 구조
 
@@ -45,7 +45,7 @@
 - 상세 자료 정보 및 태그
 - 자료 업로드 안내
 
-### 자주하는질문 페이지 (`faq.html`)
+### 자주 찾는 질문 페이지 (`faq.html`)
 - FAQ 검색 기능
 - 카테고리별 FAQ 분류
 - 상세 답변 및 설명
@@ -104,7 +104,7 @@ cloud-timeline/
 ├── timeline.html           # 정책 타임라인 페이지
 ├── projects.html           # 전환 사업 페이지
 ├── resources.html          # 자료실 페이지
-├── faq.html               # 자주하는질문 페이지
+├── faq.html               # 자주 찾는 질문 페이지
 ├── styles.css             # CSS 스타일시트
 ├── script.js              # JavaScript 기능
 └── README.md              # 프로젝트 설명서

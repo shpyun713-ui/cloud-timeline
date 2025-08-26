@@ -6,6 +6,164 @@ document.addEventListener('DOMContentLoaded', function() {
     let selectedStages = new Set();
     let selectedTypes = new Set();
     
+    // 가이드 데이터 정의
+    const guideData = {
+        '행정공공기관 클라우드 컴퓨팅서비스 이용안내서': {
+            description: '기관별 클라우드 전환 사업계획 수립을 위한 표준 템플릿으로, 체계적인 계획 수립과 예산을 지원합니다.',
+            category: 'cloud-computing',
+            categoryName: '클라우드 컴퓨팅 서비스 이용',
+            stages: ['기획', '도입', '이용'],
+            format: '템플릿',
+            date: '2024.01.15',
+            size: '5.2MB',
+            views: '1,892회',
+            icon: '📋'
+        },
+        'ISP/ISMP 수립 공통 가이드(8판)': {
+            description: '정보시스템 계획 수립을 위한 표준 가이드라인',
+            category: 'budget',
+            categoryName: '예산/이용 요금 산출',
+            stages: ['기획', '도입'],
+            format: 'PDF',
+            date: '2024.01.10',
+            size: '32.8MB',
+            views: '1,567회',
+            icon: '📊'
+        },
+        '행정공공기관 클라우드컴퓨팅 서비스 이용요금 산출 가이드': {
+            description: '클라우드 서비스 비용 산출 및 예산 계획 수립 가이드',
+            category: 'budget',
+            categoryName: '예산/이용 요금 산출',
+            stages: ['기획', '도입', '이용'],
+            format: 'PDF',
+            date: '2024.01.08',
+            size: '15.3MB',
+            views: '2,134회',
+            icon: '💰'
+        },
+        '국가 클라우드 컴퓨팅 보안가이드라인': {
+            description: '국가 차원의 클라우드 보안 표준 및 가이드라인',
+            category: 'security',
+            categoryName: '보안',
+            stages: ['준비', '기획', '도입', '이용', '종료'],
+            format: 'PDF',
+            date: '2024.01.05',
+            size: '28.7MB',
+            views: '3,456회',
+            icon: '🔒'
+        },
+        '국가 클라우드 컴퓨팅 보안관제가이드라인': {
+            description: '클라우드 보안 모니터링 및 관제 업무 표준',
+            category: 'security',
+            categoryName: '보안',
+            stages: ['준비', '기획', '도입', '이용', '종료'],
+            format: 'PDF',
+            date: '2024.01.03',
+            size: '22.1MB',
+            views: '1,987회',
+            icon: '🛡️'
+        },
+        '클라우드 네이티브 구축운영 가이드': {
+            description: '클라우드 네이티브 아키텍처 구축 및 운영 표준',
+            category: 'construction',
+            categoryName: '구축/운영',
+            stages: ['준비', '기획', '도입', '이용', '종료'],
+            format: 'PDF',
+            date: '2023.12.28',
+            size: '45.2MB',
+            views: '4,321회',
+            icon: '🏗️'
+        },
+        '클라우드 네이티브 구축운영 상세 가이드': {
+            description: '클라우드 네이티브 시스템 구축의 세부적인 실행 방법',
+            category: 'construction',
+            categoryName: '구축/운영',
+            stages: ['도입'],
+            format: 'PDF',
+            date: '2023.12.25',
+            size: '67.8MB',
+            views: '2,876회',
+            icon: '🔧'
+        },
+        '클라우드네이티브 정보시스템 구축을 위한 발주자 안내서': {
+            description: '발주자가 알아야 할 클라우드 네이티브 구축 요구사항',
+            category: 'construction',
+            categoryName: '구축/운영',
+            stages: ['도입', '이용', '종료'],
+            format: 'PDF',
+            date: '2023.12.20',
+            size: '19.4MB',
+            views: '1,654회',
+            icon: '📝'
+        },
+        '클라우드네이티브 정보시스템 구축을 위한 개발자 안내서': {
+            description: '개발자를 위한 클라우드 네이티브 개발 방법론',
+            category: 'construction',
+            categoryName: '구축/운영',
+            stages: ['도입', '이용', '종료'],
+            format: 'PDF',
+            date: '2023.12.15',
+            size: '34.6MB',
+            views: '3,789회',
+            icon: '💻'
+        },
+        '범정부 정보시스템 표준운영절차서': {
+            description: '정부 정보시스템 운영을 위한 표준 절차 및 방법',
+            category: 'construction',
+            categoryName: '구축/운영',
+            stages: ['도입', '이용', '종료'],
+            format: 'PDF',
+            date: '2023.12.10',
+            size: '41.2MB',
+            views: '2,543회',
+            icon: '⚙️'
+        },
+        '공공부문 SaaS 이용가이드라인': {
+            description: '공공부문에서 SaaS 서비스 도입 및 활용 가이드',
+            category: 'saas',
+            categoryName: 'SaaS 이용',
+            stages: ['준비', '기획', '도입', '이용', '종료'],
+            format: 'PDF',
+            date: '2023.11.30',
+            size: '18.9MB',
+            views: '1,876회',
+            icon: '☁️'
+        },
+        '국가기관등을 위한 디지털서비스 이용계약 가이드라인': {
+            description: '디지털 서비스 계약 체결 시 고려사항 및 표준 약관',
+            category: 'contract',
+            categoryName: '계약',
+            stages: ['도입', '이용', '종료'],
+            format: 'PDF',
+            date: '2023.11.25',
+            size: '26.7MB',
+            views: '1,432회',
+            icon: '📄'
+        },
+        '전자정부 성과관리 업무 매뉴얼(24년도)': {
+            description: '전자정부 사업의 성과 측정 및 관리 표준 매뉴얼',
+            category: 'performance',
+            categoryName: '성과관리/비용최적화',
+            stages: ['도입', '이용'],
+            format: 'PDF',
+            date: '2023.11.20',
+            size: '23.4MB',
+            views: '987회',
+            icon: '📈'
+        },
+        '클라우드 컴퓨팅서비스 비용 최적화가이드': {
+            description: '클라우드 서비스 비용 절감 및 효율성 향상 방법론',
+            category: 'performance',
+            categoryName: '성과관리/비용최적화',
+            stages: ['이용', '종료'],
+            format: 'PDF',
+            date: '2023.11.15',
+            size: '31.8MB',
+            views: '2,765회',
+            icon: '💡'
+        }
+    };
+    
     // 라이프사이클 단계 클릭 이벤트
     const stageItems = document.querySelectorAll('.stage-item.clickable');
     stageItems.forEach(stage => {
@@ -20,8 +178,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // 현재 클릭된 스테이지만 선택 상태로 설정
             this.classList.add('selected');
             
-            // 모든 가이드 표시 (범주가 선택된 경우 해당 범주만)
-            showAllGuides();
+            // 스테이지 선택 상태 업데이트
+            selectedStages.clear();
+            selectedStages.add(stageType);
+            
+            // 범주와 스테이지를 모두 고려한 필터링 적용
+            applyFilters();
         });
     });
     
@@ -69,32 +231,130 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // 모든 가이드 표시 함수 (범주가 선택된 경우 해당 범주만 표시)
-    function showAllGuides() {
+    // 초기 가이드 표시 함수 (필터링 없이 모든 가이드 표시)
+    function showInitialGuides() {
         const guidelineItems = document.querySelectorAll('.guideline-item');
+        guidelineItems.forEach(item => {
+            item.classList.add('visible');
+            item.classList.remove('filtered');
+        });
+        clearFilterStatus();
+    }
+    
+    // 결과 카드 업데이트 함수
+    function updateResultCards() {
+        const resultSection = document.querySelector('.filtered-results-section');
+        const resultGrid = document.getElementById('filteredResultsGrid');
         
-        // 범주가 선택된 상태라면 해당 범주의 가이드만 표시
-        if (selectedCategories.size > 0) {
-            guidelineItems.forEach(item => {
-                const itemCategory = item.getAttribute('data-category');
-                if (selectedCategories.has(itemCategory)) {
-                    item.classList.add('visible');
-                    item.classList.remove('filtered');
-                } else {
-                    item.classList.remove('visible');
-                    item.classList.add('filtered');
-                }
-            });
-        } else {
-            // 범주가 선택되지 않은 경우 모든 가이드 표시
-            guidelineItems.forEach(item => {
-                item.classList.add('visible');
-                item.classList.remove('filtered');
-            });
+        if (!resultSection || !resultGrid) return;
+        
+        // 보이는 가이드라인 아이템들 찾기
+        const visibleItems = document.querySelectorAll('.guideline-item.visible');
+        
+        if (visibleItems.length === 0) {
+            resultSection.style.display = 'none';
+            return;
         }
         
-        // 스테이지 선택 상태는 유지하되 필터 상태만 업데이트
-        updateFilterStatus();
+        // 결과 섹션 표시
+        resultSection.style.display = 'block';
+        
+        // 기존 카드들 제거
+        resultGrid.innerHTML = '';
+        
+        // 각 보이는 아이템에 대해 카드 생성
+        visibleItems.forEach(item => {
+            const title = item.querySelector('h4').textContent.trim();
+            const guideInfo = guideData[title];
+            
+            if (guideInfo) {
+                const cardElement = createResultCard(title, guideInfo);
+                resultGrid.appendChild(cardElement);
+            }
+        });
+    }
+    
+    // 결과 카드 생성 함수
+    function createResultCard(title, guideInfo) {
+        const card = document.createElement('div');
+        card.className = 'result-card';
+        
+        // 스테이지 이름 매핑
+        const stageNameMap = {
+            '준비': 'pre-period',
+            '기획': 'planning', 
+            '도입': 'introduction',
+            '이용': 'usage',
+            '종료': 'termination'
+        };
+        
+        // 현재 선택된 스테이지들 찾기
+        const selectedStageNames = [];
+        selectedStages.forEach(stageClass => {
+            for (const [name, className] of Object.entries(stageNameMap)) {
+                if (className === stageClass) {
+                    selectedStageNames.push(name);
+                }
+            }
+        });
+        
+        card.innerHTML = `
+            <div class="result-card-header">
+                <div class="result-card-icon">${guideInfo.icon}</div>
+                <div class="result-card-content">
+                    <h3 class="result-card-title">${title}</h3>
+                    <p class="result-card-description">${guideInfo.description}</p>
+                </div>
+            </div>
+            
+            <div class="result-card-meta">
+                <div class="result-meta-item">
+                    <span class="result-meta-label">카테고리</span>
+                    <span>${guideInfo.categoryName}</span>
+                </div>
+                <div class="result-meta-item">
+                    <span class="result-meta-label">${guideInfo.format}</span>
+                    <span>${guideInfo.date}</span>
+                </div>
+                <div class="result-meta-item">
+                    <span class="result-meta-label">${guideInfo.size}</span>
+                    <span>${guideInfo.views}</span>
+                </div>
+            </div>
+            
+            <div class="result-card-tags">
+                <span class="result-tag category">${guideInfo.categoryName}</span>
+                ${selectedStageNames.length > 0 ? 
+                    selectedStageNames.map(stage => `<span class="result-tag stage">${stage}</span>`).join('') :
+                    guideInfo.stages.map(stage => `<span class="result-tag stage">${stage}</span>`).join('')
+                }
+                <span class="result-tag format">${guideInfo.format}</span>
+                <span class="result-tag year">${guideInfo.date.split('.')[0]}년</span>
+            </div>
+            
+            <div class="result-card-actions">
+                <button class="result-btn result-btn-preview">
+                    🔍 미리보기
+                </button>
+                <button class="result-btn result-btn-download">
+                    📥 다운로드
+                </button>
+            </div>
+        `;
+        
+        // 버튼 이벤트 리스너 추가
+        const downloadBtn = card.querySelector('.result-btn-download');
+        const previewBtn = card.querySelector('.result-btn-preview');
+        
+        downloadBtn.addEventListener('click', () => {
+            alert(`"${title}" 다운로드를 시작합니다.`);
+        });
+        
+        previewBtn.addEventListener('click', () => {
+            alert(`"${title}" 미리보기를 엽니다.`);
+        });
+        
+        return card;
     }
     
     // 필터 상태 초기화 함수
@@ -147,6 +407,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 필터링 결과 표시
         updateFilterStatus();
+        
+        // 결과 카드 업데이트
+        updateResultCards();
     }
     
     // 필터 상태 표시 함수
@@ -783,7 +1046,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 자료실 인덱스 페이지에서 초기에 모든 가이드 표시
     if (window.location.pathname.includes('resources-index.html') || window.location.pathname.includes('resources-index')) {
-        showAllGuides();
+        showInitialGuides();
     }
     
     // view-btn 클릭 효과
