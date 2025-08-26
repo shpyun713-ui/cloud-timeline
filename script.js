@@ -766,6 +766,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // 팝업 모달 초기화 (메인 페이지만)
     initializePopup();
     
+    // 자료실 인덱스 페이지에서 초기에 모든 가이드 표시
+    if (window.location.pathname.includes('resources-index.html') || window.location.pathname.includes('resources-index')) {
+        showAllGuides();
+    }
+    
 });
 
 // 팝업 모달 기능
