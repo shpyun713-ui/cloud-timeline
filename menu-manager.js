@@ -15,6 +15,13 @@ const menuData = {
             { name: '클라우드컴퓨팅서비스 활용모델 사업', url: 'utilization-model.html', active: false },
             { name: '민간 SaaS 활용촉진', url: 'saas-promotion.html', active: false }
         ]
+    },
+    guide: {
+        title: '이용 안내',
+        items: [
+            { name: '공지사항', url: 'notice.html', active: false },
+            { name: '자주찾는 질문', url: 'faq.html', active: false }
+        ]
     }
 };
 

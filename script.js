@@ -673,8 +673,159 @@ document.addEventListener('DOMContentLoaded', function() {
     // 콘솔 로그 (개발용)
     console.log('클라우드 타임라인 센터 홈페이지가 로드되었습니다.');
     console.log('정부 클라우드 스타일의 디자인이 적용되었습니다.');
+
+    // 탭 기능 구현
+    function initializeTabs() {
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetTab = btn.getAttribute('data-tab');
+                
+                // 모든 탭 버튼에서 active 클래스 제거
+                tabBtns.forEach(b => b.classList.remove('active'));
+                // 모든 탭 패널에서 active 클래스 제거
+                tabPanels.forEach(panel => panel.classList.remove('active'));
+                
+                // 클릭된 탭 버튼에 active 클래스 추가
+                btn.classList.add('active');
+                // 해당하는 탭 패널에 active 클래스 추가
+                const targetPanel = document.getElementById(`${targetTab}-panel`);
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                }
+            });
+        });
+    }
+
+    // 공지사항 검색 및 필터링
+    function initializeNoticeBoard() {
+        const searchInput = document.getElementById('searchInput');
+        const searchBtn = document.getElementById('searchBtn');
+        const categoryFilter = document.getElementById('categoryFilter');
+        const noticeItems = document.querySelectorAll('.notice-list-item');
+
+        // 검색 기능
+        function performSearch() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedCategory = categoryFilter.value;
+
+            noticeItems.forEach(item => {
+                const titleElement = item.querySelector('.notice-link');
+                const title = titleElement ? titleElement.textContent.toLowerCase() : '';
+                const category = item.getAttribute('data-category');
+
+                const matchesSearch = title.includes(searchTerm);
+                const matchesCategory = !selectedCategory || category === selectedCategory;
+
+                if (matchesSearch && matchesCategory) {
+                    item.style.display = 'grid';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // 이벤트 리스너 등록
+        if (searchBtn) {
+            searchBtn.addEventListener('click', performSearch);
+        }
+        if (searchInput) {
+            searchInput.addEventListener('input', performSearch);
+        }
+        if (categoryFilter) {
+            categoryFilter.addEventListener('change', performSearch);
+        }
+    }
+
+    // 탭 기능 초기화
+    initializeTabs();
+    
+    // 공지사항 기능 초기화
+    initializeNoticeBoard();
+    
+    // 팝업 모달 초기화 (메인 페이지만)
+    initializePopup();
     
 });
+
+// 팝업 모달 기능
+function initializePopup() {
+    // 메인 페이지에서만 실행
+    if (!window.location.pathname.includes('index.html') && window.location.pathname !== '/') {
+        return;
+    }
+
+    const popup = document.getElementById('seminarPopup');
+    const closeBtn = document.getElementById('closePopup');
+    const closeTodayBtn = document.getElementById('closeToday');
+    const moreInfoBtn = document.getElementById('moreInfo');
+    const overlay = document.querySelector('.popup-overlay');
+
+    // 팝업이 없으면 return
+    if (!popup) return;
+
+    // 오늘 하루 보지 않기가 설정되어 있는지 확인
+    const hideToday = localStorage.getItem('hidePopupToday');
+    const today = new Date().toDateString();
+
+    // 오늘 하루 보지 않기가 오늘 날짜와 같으면 팝업 표시하지 않음
+    if (hideToday === today) {
+        return;
+    }
+
+    // 페이지 로드 후 1초 뒤에 팝업 표시
+    setTimeout(() => {
+        showPopup();
+    }, 1000);
+
+    // 팝업 표시 함수
+    function showPopup() {
+        popup.classList.add('show');
+        document.body.style.overflow = 'hidden'; // 스크롤 방지
+    }
+
+    // 팝업 숨김 함수
+    function hidePopup() {
+        popup.classList.remove('show');
+        document.body.style.overflow = ''; // 스크롤 복원
+    }
+
+    // 닫기 버튼 클릭
+    if (closeBtn) {
+        closeBtn.addEventListener('click', hidePopup);
+    }
+
+    // 오버레이 클릭 시 닫기
+    if (overlay) {
+        overlay.addEventListener('click', hidePopup);
+    }
+
+    // 오늘 하루 보지 않기 버튼
+    if (closeTodayBtn) {
+        closeTodayBtn.addEventListener('click', () => {
+            localStorage.setItem('hidePopupToday', today);
+            hidePopup();
+        });
+    }
+
+    // 자세히 보기 버튼
+    if (moreInfoBtn) {
+        moreInfoBtn.addEventListener('click', () => {
+            // 세미나 관련 페이지로 이동 (예: 공지사항 페이지)
+            window.open('notice.html', '_blank');
+            hidePopup();
+        });
+    }
+
+    // ESC 키로 팝업 닫기
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && popup.classList.contains('show')) {
+            hidePopup();
+        }
+    });
+}
 
 // CSS 애니메이션 키프레임 추가
 const style = document.createElement('style');

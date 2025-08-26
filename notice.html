@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항 - 행정·공공기관 클라우드전문지원센터</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="header-main">
+            <div class="container">
+                <div class="logo-section">
+                    <h1 class="logo">
+                        <a href="index.html" style="text-decoration: none; color: inherit;">
+                            <span class="logo-text">행정·공공기관</span>
+                            <span class="logo-sub">클라우드전문지원센터</span>
+                        </a>
+                    </h1>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="intro.html" class="nav-link">센터 소개</a>
+                        </li>
+                        <li class="nav-item" data-menu="policy">
+                            <a href="timeline.html" class="nav-link">정책 소개</a>
+                        </li>
+                        <li class="nav-item" data-menu="project">
+                            <a href="projects.html" class="nav-link">전환 사업</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="resources.html" class="nav-link">자료실</a>
+                        </li>
+                        <li class="nav-item" data-menu="guide">
+                            <a href="guide.html" class="nav-link active">이용 안내</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 페이지 헤더 -->
+    <section class="page-header">
+        <div class="container">
+            <h1>공지사항</h1>
+            <p>클라우드컴퓨팅센터의 모든 공지사항을 확인하세요</p>
+        </div>
+    </section>
+
+    <!-- 메인 콘텐츠 -->
+    <main class="main-content">
+        <div class="container">
+            <!-- 검색 및 필터 -->
+            <div class="search-filter">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="공지사항 검색...">
+                    <button type="button" id="searchBtn">검색</button>
+                </div>
+                <div class="filter-options">
+                    <select id="categoryFilter">
+                        <option value="">전체 카테고리</option>
+                        <option value="service">서비스 안내</option>
+                        <option value="system">시스템 점검</option>
+                        <option value="update">업데이트</option>
+                        <option value="event">교육/행사</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 공지사항 목록 -->
+            <div class="notice-list-table">
+                <div class="notice-list-header">
+                    <div class="list-col-num">번호</div>
+                    <div class="list-col-category">분류</div>
+                    <div class="list-col-title">제목</div>
+                    <div class="list-col-author">작성자</div>
+                    <div class="list-col-date">작성일</div>
+                    <div class="list-col-views">조회</div>
+                </div>
+                
+                <div class="notice-list-body">
+                    <div class="notice-list-item" data-category="service">
+                        <div class="list-col-num">5</div>
+                        <div class="list-col-category">
+                            <span class="category-badge service">서비스 안내</span>
+                        </div>
+                        <div class="list-col-title">
+                            <a href="#" class="notice-link">정부클라우드 서비스 운영 시간 안내</a>
+                        </div>
+                        <div class="list-col-author">운영팀</div>
+                        <div class="list-col-date">2024.12.15</div>
+                        <div class="list-col-views">1,234</div>
+                    </div>
+
+                    <div class="notice-list-item" data-category="system">
+                        <div class="list-col-num">4</div>
+                        <div class="list-col-category">
+                            <span class="category-badge system">시스템 점검</span>
+                        </div>
+                        <div class="list-col-title">
+                            <a href="#" class="notice-link">정기 시스템 점검 안내 (12월 24일)</a>
+                        </div>
+                        <div class="list-col-author">기술운영팀</div>
+                        <div class="list-col-date">2024.12.10</div>
+                        <div class="list-col-views">567</div>
+                    </div>
+
+                    <div class="notice-list-item" data-category="update">
+                        <div class="list-col-num">3</div>
+                        <div class="list-col-category">
+                            <span class="category-badge update">업데이트</span>
+                        </div>
+                        <div class="list-col-title">
+                            <a href="#" class="notice-link">정부클라우드 보안 가이드라인 v2.1 업데이트</a>
+                        </div>
+                        <div class="list-col-author">보안정책팀</div>
+                        <div class="list-col-date">2024.12.05</div>
+                        <div class="list-col-views">2,156</div>
+                    </div>
+
+                    <div class="notice-list-item" data-category="event">
+                        <div class="list-col-num">2</div>
+                        <div class="list-col-category">
+                            <span class="category-badge event">교육/행사</span>
+                        </div>
+                        <div class="list-col-title">
+                            <a href="#" class="notice-link">2025년 정부클라우드 도입 설명회 개최</a>
+                        </div>
+                        <div class="list-col-author">정책기획팀</div>
+                        <div class="list-col-date">2024.11.28</div>
+                        <div class="list-col-views">1,789</div>
+                    </div>
+
+                    <div class="notice-list-item" data-category="service">
+                        <div class="list-col-num">1</div>
+                        <div class="list-col-category">
+                            <span class="category-badge service">서비스 안내</span>
+                        </div>
+                        <div class="list-col-title">
+                            <a href="#" class="notice-link">정부클라우드 SaaS 서비스 신규 추가</a>
+                        </div>
+                        <div class="list-col-author">서비스팀</div>
+                        <div class="list-col-date">2024.11.20</div>
+                        <div class="list-col-views">987</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 페이지네이션 -->
+            <div class="pagination">
+                <button class="page-btn prev">이전</button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <button class="page-btn next">다음</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>행정·공공기관 클라우드전문지원센터</h3>
+                    <p>공공기관의 디지털 전환을 위한 클라우드 도입을 전문적으로 지원합니다.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>주요 서비스</h4>
+                    <ul>
+                        <li>클라우드 전환 컨설팅</li>
+                        <li>기술 지원 및 교육</li>
+                        <li>보안 가이드라인 제공</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>문의처</h4>
+                    <p>전화: 02-1234-5678</p>
+                    <p>이메일: info@cloudcenter.go.kr</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 행정·공공기관 클라우드전문지원센터. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="menu-manager.js"></script>
+</body>
+</html>
