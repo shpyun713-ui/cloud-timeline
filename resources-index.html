@@ -58,7 +58,7 @@
             <section class="view-options-section">
                 <div class="view-options">
                     <div class="view-buttons">
-                        <a href="resources-index.html" class="view-btn timeline-view active">
+                        <a href="resources-index.html" class="view-btn timeline-view">
                             <div class="view-icon">📊</div>
                             <span>타임라인별</span>
                         </a>
@@ -77,7 +77,7 @@
                     <div class="lifecycle-stages">
                         <a href="#" class="stage-item clickable" data-stage="pre-period">
                             <div class="stage-icon">📋</div>
-                            <span class="stage-name">전주기</span>
+                            <span class="stage-name">준비</span>
                         </a>
                         <a href="#" class="stage-item clickable" data-stage="planning">
                             <div class="stage-icon">📊</div>
@@ -104,11 +104,12 @@
                     <div class="area-row">
                         <a href="#" class="area-label clickable" data-category="cloud-computing">클라우드 컴퓨팅 서비스 이용</a>
                         <div class="guidelines-container">
-                            <div class="guideline-item planning introduction usage">
+                            <div class="guideline-item planning introduction usage" data-category="cloud-computing">
                                 <div class="guideline-content">
                                     <h4>행정공공기관 클라우드 컴퓨팅서비스 이용안내서</h4>
                                 </div>
                             </div>
+
                         </div>
                     </div>
 
@@ -116,12 +117,12 @@
                     <div class="area-row">
                         <a href="#" class="area-label clickable" data-category="budget">예산/이용 요금 산출</a>
                         <div class="guidelines-container">
-                            <div class="guideline-item planning">
+                            <div class="guideline-item planning introduction" data-category="budget">
                                 <div class="guideline-content">
                                     <h4>ISP/ISMP 수립 공통 가이드(8판)</h4>
                                 </div>
                             </div>
-                            <div class="guideline-item planning introduction">
+                            <div class="guideline-item planning introduction usage" data-category="budget">
                                 <div class="guideline-content">
                                     <h4>행정공공기관 클라우드컴퓨팅 서비스 이용요금 산출 가이드</h4>
                                 </div>
@@ -133,12 +134,12 @@
                     <div class="area-row">
                         <a href="#" class="area-label clickable" data-category="security">보안</a>
                         <div class="guidelines-container">
-                            <div class="guideline-item planning introduction usage">
+                            <div class="guideline-item pre-period planning introduction usage termination" data-category="security">
                                 <div class="guideline-content">
                                     <h4>국가 클라우드 컴퓨팅 보안가이드라인</h4>
                                 </div>
                             </div>
-                            <div class="guideline-item introduction usage">
+                            <div class="guideline-item pre-period planning introduction usage termination" data-category="security">
                                 <div class="guideline-content">
                                     <h4>국가 클라우드 컴퓨팅 보안관제가이드라인</h4>
                                 </div>
@@ -150,7 +151,7 @@
                     <div class="area-row">
                         <a href="#" class="area-label clickable" data-category="construction">구축/운영</a>
                         <div class="guidelines-container">
-                            <div class="guideline-item pre-period planning">
+                            <div class="guideline-item pre-period planning introduction usage termination" data-category="construction">
                                 <div class="guideline-content">
                                     <h4>클라우드 네이티브 구축운영 가이드</h4>
                                 </div>
@@ -160,17 +161,17 @@
                                     <h4>클라우드 네이티브 구축운영 상세 가이드</h4>
                                 </div>
                             </div>
-                            <div class="guideline-item introduction usage">
+                            <div class="guideline-item pre-period introduction usage termination" data-category="construction">
                                 <div class="guideline-content">
                                     <h4>클라우드네이티브 정보시스템 구축을 위한 발주자 안내서</h4>
                                 </div>
                             </div>
-                            <div class="guideline-item introduction usage">
+                            <div class="guideline-item pre-period introduction usage termination" data-category="construction">
                                 <div class="guideline-content">
                                     <h4>클라우드네이티브 정보시스템 구축을 위한 개발자 안내서</h4>
                                 </div>
                             </div>
-                            <div class="guideline-item introduction usage">
+                            <div class="guideline-item pre-period introduction usage termination" data-category="construction">
                                 <div class="guideline-content">
                                     <h4>범정부 정보시스템 표준운영절차서</h4>
                                 </div>
@@ -182,7 +183,7 @@
                     <div class="area-row">
                         <a href="#" class="area-label clickable" data-category="saas">SaaS 이용</a>
                         <div class="guidelines-container">
-                            <div class="guideline-item planning introduction usage">
+                            <div class="guideline-item pre-period planning introduction usage termination" data-category="saas">
                                 <div class="guideline-content">
                                     <h4>공공부문 SaaS 이용가이드라인</h4>
                                 </div>
@@ -194,7 +195,7 @@
                     <div class="area-row">
                         <a href="#" class="area-label clickable" data-category="contract">계약</a>
                         <div class="guidelines-container">
-                            <div class="guideline-item introduction usage">
+                            <div class="guideline-item introduction usage termination" data-category="contract">
                                 <div class="guideline-content">
                                     <h4>국가기관등을 위한 디지털서비스 이용계약 가이드라인</h4>
                                 </div>
@@ -206,12 +207,12 @@
                     <div class="area-row">
                         <a href="#" class="area-label clickable" data-category="performance">성과관리/비용최적화</a>
                         <div class="guidelines-container">
-                            <div class="guideline-item usage">
+                            <div class="guideline-item introduction usage" data-category="performance">
                                 <div class="guideline-content">
                                     <h4>전자정부 성과관리 업무 매뉴얼(24년도)</h4>
                                 </div>
                             </div>
-                            <div class="guideline-item usage">
+                            <div class="guideline-item usage termination" data-category="performance">
                                 <div class="guideline-content">
                                     <h4>클라우드 컴퓨팅서비스 비용 최적화가이드</h4>
                                 </div>
@@ -242,7 +243,7 @@
                 </a>
                 <a href="faq.html" class="menu-card">
                     <div class="menu-icon">❓</div>
-                    <h3>자주하는 질문</h3>
+                    <h3>자주 찾찾는 질문</h3>
                     <p>클라우드 전환 관련 FAQ</p>
                 </a>
             </div>

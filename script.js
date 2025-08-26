@@ -14,14 +14,13 @@ document.addEventListener('DOMContentLoaded', function() {
             const stageType = this.getAttribute('data-stage');
             console.log('클릭된 라이프사이클 단계:', stageType);
             
-            // 선택 상태 토글 (시각적 효과만)
-            if (this.classList.contains('selected')) {
-                this.classList.remove('selected');
-            } else {
-                this.classList.add('selected');
-            }
+            // 다른 스테이지들의 선택 상태 모두 제거
+            stageItems.forEach(item => item.classList.remove('selected'));
             
-            // 모든 가이드 표시
+            // 현재 클릭된 스테이지만 선택 상태로 설정
+            this.classList.add('selected');
+            
+            // 모든 가이드 표시 (범주가 선택된 경우 해당 범주만)
             showAllGuides();
         });
     });
@@ -70,16 +69,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // 모든 가이드 표시 함수
+    // 모든 가이드 표시 함수 (범주가 선택된 경우 해당 범주만 표시)
     function showAllGuides() {
         const guidelineItems = document.querySelectorAll('.guideline-item');
-        guidelineItems.forEach(item => {
-            item.classList.add('visible');
-            item.classList.remove('filtered');
-        });
         
-        // 필터 상태 초기화
-        clearFilterStatus();
+        // 범주가 선택된 상태라면 해당 범주의 가이드만 표시
+        if (selectedCategories.size > 0) {
+            guidelineItems.forEach(item => {
+                const itemCategory = item.getAttribute('data-category');
+                if (selectedCategories.has(itemCategory)) {
+                    item.classList.add('visible');
+                    item.classList.remove('filtered');
+                } else {
+                    item.classList.remove('visible');
+                    item.classList.add('filtered');
+                }
+            });
+        } else {
+            // 범주가 선택되지 않은 경우 모든 가이드 표시
+            guidelineItems.forEach(item => {
+                item.classList.add('visible');
+                item.classList.remove('filtered');
+            });
+        }
+        
+        // 스테이지 선택 상태는 유지하되 필터 상태만 업데이트
+        updateFilterStatus();
     }
     
     // 필터 상태 초기화 함수
@@ -771,7 +786,33 @@ document.addEventListener('DOMContentLoaded', function() {
         showAllGuides();
     }
     
+    // view-btn 클릭 효과
+    initializeViewButtons();
+    
 });
+
+// view-btn 클릭 효과 초기화
+function initializeViewButtons() {
+    const viewBtns = document.querySelectorAll('.view-btn');
+    
+    viewBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            // 모든 버튼에서 clicked 클래스 제거
+            viewBtns.forEach(b => b.classList.remove('clicked'));
+            
+            // 클릭된 버튼에 clicked 클래스 추가
+            this.classList.add('clicked');
+            
+            // 0.5초 후에 페이지 이동
+            setTimeout(() => {
+                window.location.href = this.href;
+            }, 200);
+            
+            // 기본 링크 동작 방지
+            e.preventDefault();
+        });
+    });
+}
 
 // 팝업 모달 기능
 function initializePopup() {

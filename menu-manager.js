@@ -20,7 +20,7 @@ const menuData = {
         title: '이용 안내',
         items: [
             { name: '공지사항', url: 'notice.html', active: false },
-            { name: '자주찾는 질문', url: 'faq.html', active: false }
+            { name: '자주 찾는 질문', url: 'faq.html', active: false }
         ]
     }
 };

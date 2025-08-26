@@ -6235,7 +6235,7 @@ body {
     border-color: #3b82f6;
 }
 
-.view-btn.active {
+.view-btn.clicked {
     border-color: #3b82f6;
     background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
 }
