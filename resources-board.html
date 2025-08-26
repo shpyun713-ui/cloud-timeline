@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자료실 게시판 - 행정·공공기관 클라우드전문지원센터</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="header-main">
+            <div class="container">
+                <div class="logo-section">
+                    <h1 class="logo">
+                        <a href="index.html" style="text-decoration: none; color: inherit;">
+                            <span class="logo-text">행정·공공기관</span>
+                            <span class="logo-sub">클라우드전문지원센터</span>
+                        </a>
+                    </h1>
+                </div>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="intro.html" class="nav-link">센터 소개</a>
+                        </li>
+                        <li class="nav-item" data-menu="policy">
+                            <a href="timeline.html" class="nav-link">정책 소개</a>
+                        </li>
+                        <li class="nav-item" data-menu="project">
+                            <a href="projects.html" class="nav-link">전환 사업</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="resources.html" class="nav-link active">자료실</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="faq.html" class="nav-link">자주하는질문</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- 페이지 헤더 -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">자료실 게시판</h1>
+            <p class="page-subtitle">클라우드 전환 관련 모든 자료를 체계적으로 찾아보세요</p>
+        </div>
+    </section>
+
+    <!-- 자료실 게시판 -->
+    <section class="section resources-board-section">
+        <div class="container">
+            <!-- 보기 방식 선택 -->
+            <section class="view-options-section">
+                <div class="view-options">
+                    <div class="view-buttons">
+                        <a href="resources-index.html" class="view-btn timeline-view">
+                            <div class="view-icon">📊</div>
+                            <span>타임라인별</span>
+                        </a>
+                        <a href="resources-board.html" class="view-btn list-view active">
+                            <div class="view-icon">📋</div>
+                            <span>목록별</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 검색 및 필터 -->
+            <div class="board-controls">
+                <div class="search-box">
+                    <input type="text" placeholder="자료명 또는 키워드를 입력하세요" class="search-input">
+                    <button class="search-btn">🔍 검색</button>
+                </div>
+                <div class="filter-controls">
+                    <select class="category-filter">
+                        <option value="">전체 카테고리</option>
+                        <option value="cloud-computing">클라우드 컴퓨팅 서비스 이용</option>
+                        <option value="budget">예산/이용 요금 산출</option>
+                        <option value="security">보안</option>
+                        <option value="construction">구축/운영</option>
+                        <option value="saas">SaaS 이용</option>
+                        <option value="contract">계약</option>
+                        <option value="performance">성과관리/비용최적화</option>
+                    </select>
+                    <select class="stage-filter">
+                        <option value="">전체 단계</option>
+                        <option value="pre-period">전주기</option>
+                        <option value="planning">기획</option>
+                        <option value="introduction">도입</option>
+                        <option value="usage">이용</option>
+                        <option value="termination">종료</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 게시판 테이블 -->
+            <div class="board-table">
+                <div class="table-header">
+                    <div class="col-category">카테고리</div>
+                    <div class="col-title">자료명</div>
+                    <div class="col-stage">적용단계</div>
+                    <div class="col-date">등록일</div>
+                    <div class="col-download">다운로드</div>
+                </div>
+                
+                <div class="table-body">
+                    <!-- 행정공공기관 클라우드 컴퓨팅서비스 이용안내서 -->
+                    <div class="table-row" data-category="cloud-computing" data-stage="planning introduction usage">
+                        <div class="col-category">
+                            <span class="category-tag cloud-computing">클라우드 컴퓨팅 서비스 이용</span>
+                        </div>
+                        <div class="col-title">
+                            <h4>행정공공기관 클라우드 컴퓨팅서비스 이용안내서</h4>
+                            <p class="description">행정공공기관의 클라우드 컴퓨팅 서비스 이용에 대한 종합적인 안내서</p>
+                        </div>
+                        <div class="col-stage">
+                            <div class="stage-tags">
+                                <span class="stage-tag planning">기획</span>
+                                <span class="stage-tag introduction">도입</span>
+                                <span class="stage-tag usage">이용</span>
+                            </div>
+                        </div>
+                        <div class="col-date">2024.01.15</div>
+                        <div class="col-download">
+                            <button class="download-btn">📥 다운로드</button>
+                        </div>
+                    </div>
+
+                    <!-- ISP/ISMP 수립 공통 가이드 -->
+                    <div class="table-row" data-category="budget" data-stage="planning">
+                        <div class="col-category">
+                            <span class="category-tag budget">예산/이용 요금 산출</span>
+                        </div>
+                        <div class="col-title">
+                            <h4>ISP/ISMP 수립 공통 가이드(8판)</h4>
+                            <p class="description">정보시스템 계획 수립을 위한 표준 가이드라인</p>
+                        </div>
+                        <div class="col-stage">
+                            <div class="stage-tags">
+                                <span class="stage-tag planning">기획</span>
+                            </div>
+                        </div>
+                        <div class="col-date">2024.01.10</div>
+                        <div class="col-download">
+                            <button class="download-btn">📥 다운로드</button>
+                        </div>
+                    </div>
+
+                    <!-- 행정공공기관 클라우드컴퓨팅 서비스 이용요금 산출 가이드 -->
+                    <div class="table-row" data-category="budget" data-stage="planning introduction">
+                        <div class="col-category">
+                            <span class="category-tag budget">예산/이용 요금 산출</span>
+                        </div>
+                        <div class="col-title">
+                            <h4>행정공공기관 클라우드컴퓨팅 서비스 이용요금 산출 가이드</h4>
+                            <p class="description">클라우드 서비스 비용 산출 및 예산 계획 수립 가이드</p>
+                        </div>
+                        <div class="col-stage">
+                            <div class="stage-tags">
+                                <span class="stage-tag planning">기획</span>
+                                <span class="stage-tag introduction">도입</span>
+                            </div>
+                        </div>
+                        <div class="col-date">2024.01.08</div>
+                        <div class="col-download">
+                            <button class="download-btn">📥 다운로드</button>
+                        </div>
+                    </div>
+
+                    <!-- 국가 클라우드 컴퓨팅 보안가이드라인 -->
+                    <div class="table-row" data-category="security" data-stage="planning introduction usage">
+                        <div class="col-category">
+                            <span class="category-tag security">보안</span>
+                        </div>
+                        <div class="col-title">
+                            <h4>국가 클라우드 컴퓨팅 보안가이드라인</h4>
+                            <p class="description">국가 차원의 클라우드 보안 표준 및 가이드라인</p>
+                        </div>
+                        <div class="col-stage">
+                            <div class="stage-tags">
+                                <span class="stage-tag planning">기획</span>
+                                <span class="stage-tag introduction">도입</span>
+                                <span class="stage-tag usage">이용</span>
+                            </div>
+                        </div>
+                        <div class="col-date">2024.01.05</div>
+                        <div class="col-download">
+                            <button class="download-btn">📥 다운로드</button>
+                        </div>
+                    </div>
+
+                    <!-- 국가 클라우드 컴퓨팅 보안관제가이드라인 -->
+                    <div class="table-row" data-category="security" data-stage="introduction usage">
+                        <div class="col-category">
+                            <span class="category-tag security">보안</span>
+                        </div>
+                        <div class="col-title">
+                            <h4>국가 클라우드 컴퓨팅 보안관제가이드라인</h4>
+                            <p class="description">클라우드 보안 모니터링 및 관제 업무 표준</p>
+                        </div>
+                        <div class="col-stage">
+                            <div class="stage-tags">
+                                <span class="stage-tag introduction">도입</span>
+                                <span class="stage-tag usage">이용</span>
+                            </div>
+                        </div>
+                        <div class="col-date">2024.01.03</div>
+                        <div class="col-download">
+                            <button class="download-btn">📥 다운로드</button>
+                        </div>
+                    </div>
+
+                    <!-- 클라우드 네이티브 구축운영 가이드 -->
+                    <div class="table-row" data-category="construction" data-stage="pre-period planning">
+                        <div class="col-category">
+                            <span class="category-tag construction">구축/운영</span>
+                        </div>
+                        <div class="col-title">
+                            <h4>클라우드 네이티브 구축운영 가이드</h4>
+                            <p class="description">클라우드 네이티브 아키텍처 구축 및 운영 표준</p>
+                        </div>
+                        <div class="col-stage">
+                            <div class="stage-tags">
+                                <span class="stage-tag pre-period">전주기</span>
+                                <span class="stage-tag planning">기획</span>
+                            </div>
+                        </div>
+                        <div class="col-date">2023.12.28</div>
+                        <div class="col-download">
+                            <button class="download-btn">📥 다운로드</button>
+                        </div>
+                    </div>
+
+                    <!-- 클라우드 네이티브 구축운영 상세 가이드 -->
+                    <div class="table-row" data-category="construction" data-stage="introduction">
+                        <div class="col-category">
+                            <span class="category-tag construction">구축/운영</span>
+                        </div>
+                        <div class="col-title">
+                            <h4>클라우드 네이티브 구축운영 상세 가이드</h4>
+                            <p class="description">클라우드 네이티브 시스템 구축의 세부적인 실행 방법</p>
+                        </div>
+                        <div class="col-stage">
+                            <div class="stage-tags">
+                                <span class="stage-tag introduction">도입</span>
+                            </div>
+                        </div>
+                        <div class="col-date">2023.12.25</div>
+                        <div class="col-download">
+                            <button class="download-btn">📥 다운로드</button>
+                        </div>
+                    </div>
+
+                    <!-- 클라우드네이티브 정보시스템 구축을 위한 발주자 안내서 -->
+                    <div class="table-row" data-category="construction" data-stage="introduction usage">
+                        <div class="col-category">
+                            <span class="category-tag construction">구축/운영</span>
+                        </div>
+                        <div class="col-title">
+                            <h4>클라우드네이티브 정보시스템 구축을 위한 발주자 안내서</h4>
+                            <p class="description">발주자가 알아야 할 클라우드 네이티브 구축 요구사항</p>
+                        </div>
+                        <div class="col-stage">
+                            <div class="stage-tags">
+                                <span class="stage-tag introduction">도입</span>
+                                <span class="stage-tag usage">이용</span>
+                            </div>
+                        </div>
+                        <div class="col-date">2023.12.20</div>
+                        <div class="col-download">
+                            <button class="download-btn">📥 다운로드</button>
+                        </div>
+                    </div>
+
+                    <!-- 클라우드네이티브 정보시스템 구축을 위한 개발자 안내서 -->
+                    <div class="table-row" data-category="construction" data-stage="introduction usage">
+                        <div class="col-category">
+                            <span class="category-tag construction">구축/운영</span>
+                        </div>
+                        <div class="col-title">
+                            <h4>클라우드네이티브 정보시스템 구축을 위한 개발자 안내서</h4>
+                            <p class="description">개발자를 위한 클라우드 네이티브 개발 방법론</p>
+                        </div>
+                        <div class="col-stage">
+                            <div class="stage-tags">
+                                <span class="stage-tag introduction">도입</span>
+                                <span class="stage-tag usage">이용</span>
+                            </div>
+                        </div>
+                        <div class="col-date">2023.12.18</div>
+                        <div class="col-download">
+                            <button class="download-btn">📥 다운로드</button>
+                        </div>
+                    </div>
+
+                    <!-- 범정부 정보시스템 표준운영절차서 -->
+                    <div class="table-row" data-category="construction" data-stage="introduction usage">
+                        <div class="col-category">
+                            <span class="category-tag construction">구축/운영</span>
+                        </div>
+                        <div class="col-title">
+                            <h4>범정부 정보시스템 표준운영절차서</h4>
+                            <p class="description">정부 정보시스템 운영을 위한 표준 절차 및 방법</p>
+                        </div>
+                        <div class="col-stage">
+                            <div class="stage-tags">
+                                <span class="stage-tag introduction">도입</span>
+                                <span class="stage-tag usage">이용</span>
+                            </div>
+                        </div>
+                        <div class="col-date">2023.12.15</div>
+                        <div class="col-download">
+                            <button class="download-btn">📥 다운로드</button>
+                        </div>
+                    </div>
+
+                    <!-- 공공부문 SaaS 이용가이드라인 -->
+                    <div class="table-row" data-category="saas" data-stage="planning introduction usage">
+                        <div class="col-category">
+                            <span class="category-tag saas">SaaS 이용</span>
+                        </div>
+                        <div class="col-title">
+                            <h4>공공부문 SaaS 이용가이드라인</h4>
+                            <p class="description">공공부문에서 SaaS 서비스 도입 및 활용 가이드</p>
+                        </div>
+                        <div class="col-stage">
+                            <div class="stage-tags">
+                                <span class="stage-tag planning">기획</span>
+                                <span class="stage-tag introduction">도입</span>
+                                <span class="stage-tag usage">이용</span>
+                            </div>
+                        </div>
+                        <div class="col-date">2023.12.12</div>
+                        <div class="col-download">
+                            <button class="download-btn">📥 다운로드</button>
+                        </div>
+                    </div>
+
+                    <!-- 국가기관등을 위한 디지털서비스 이용계약 가이드라인 -->
+                    <div class="table-row" data-category="contract" data-stage="introduction usage">
+                        <div class="col-category">
+                            <span class="category-tag contract">계약</span>
+                        </div>
+                        <div class="col-title">
+                            <h4>국가기관등을 위한 디지털서비스 이용계약 가이드라인</h4>
+                            <p class="description">디지털 서비스 계약 체결 시 고려사항 및 표준 약관</p>
+                        </div>
+                        <div class="col-stage">
+                            <div class="stage-tags">
+                                <span class="stage-tag introduction">도입</span>
+                                <span class="stage-tag usage">이용</span>
+                            </div>
+                        </div>
+                        <div class="col-date">2023.12.10</div>
+                        <div class="col-download">
+                            <button class="download-btn">📥 다운로드</button>
+                        </div>
+                    </div>
+
+                    <!-- 전자정부 성과관리 업무 매뉴얼 -->
+                    <div class="table-row" data-category="performance" data-stage="usage">
+                        <div class="col-category">
+                            <span class="category-tag performance">성과관리/비용최적화</span>
+                        </div>
+                        <div class="col-title">
+                            <h4>전자정부 성과관리 업무 매뉴얼(24년도)</h4>
+                            <p class="description">전자정부 사업의 성과 측정 및 관리 표준 매뉴얼</p>
+                        </div>
+                        <div class="col-stage">
+                            <div class="stage-tags">
+                                <span class="stage-tag usage">이용</span>
+                            </div>
+                        </div>
+                        <div class="col-date">2023.12.08</div>
+                        <div class="col-download">
+                            <button class="download-btn">📥 다운로드</button>
+                        </div>
+                    </div>
+
+                    <!-- 클라우드 컴퓨팅서비스 비용 최적화가이드 -->
+                    <div class="table-row" data-category="performance" data-stage="usage">
+                        <div class="col-category">
+                            <span class="category-tag performance">성과관리/비용최적화</span>
+                        </div>
+                        <div class="col-title">
+                            <h4>클라우드 컴퓨팅서비스 비용 최적화가이드</h4>
+                            <p class="description">클라우드 서비스 비용 절감 및 효율성 향상 방법론</p>
+                        </div>
+                        <div class="col-stage">
+                            <div class="stage-tags">
+                                <span class="stage-tag usage">이용</span>
+                            </div>
+                        </div>
+                        <div class="col-date">2023.12.05</div>
+                        <div class="col-download">
+                            <button class="download-btn">📥 다운로드</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 페이지네이션 -->
+            <div class="pagination">
+                <button class="page-btn prev">◀ 이전</button>
+                <div class="page-numbers">
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                </div>
+                <button class="page-btn next">다음 ▶</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 자료실 메뉴 -->
+    <section class="section resources-menu-section">
+        <div class="container">
+            <h2 class="section-title">자료실 메뉴</h2>
+            <div class="resources-menu-grid">
+                <a href="resources-index.html" class="menu-card">
+                    <div class="menu-icon">🗂️</div>
+                    <h3>자료 인덱스</h3>
+                    <p>라이프사이클별 가이드라인 체계도</p>
+                </a>
+                <a href="resources-board.html" class="menu-card active">
+                    <div class="menu-icon">📋</div>
+                    <h3>자료 게시판</h3>
+                    <p>모든 자료를 게시판 형태로 검색</p>
+                </a>
+                <a href="faq.html" class="menu-card">
+                    <div class="menu-icon">❓</div>
+                    <h3>자주하는 질문</h3>
+                    <p>클라우드 전환 관련 FAQ</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>행정·공공기관 클라우드전문지원센터</h3>
+                    <p>정부 클라우드 정책과 전환 사업을 지원합니다</p>
+                </div>
+                <div class="footer-section">
+                    <h4>연락처</h4>
+                    <p>📧 info@cloud-support.go.kr</p>
+                    <p>📞 02-1234-5678</p>
+                </div>
+                <div class="footer-section">
+                    <h4>주소</h4>
+                    <p>서울특별시 강남구 테헤란로 123</p>
+                    <p>정부과천청사 3동 5층</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 행정·공공기관 클라우드전문지원센터. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

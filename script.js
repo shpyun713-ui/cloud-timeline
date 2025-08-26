@@ -1,6 +1,165 @@
 // DOM이 로드된 후 실행
 document.addEventListener('DOMContentLoaded', function() {
     
+    // 복수 선택 필터링 기능
+    let selectedCategories = new Set();
+    let selectedStages = new Set();
+    let selectedTypes = new Set();
+    
+    // 라이프사이클 단계 클릭 이벤트
+    const stageItems = document.querySelectorAll('.stage-item.clickable');
+    stageItems.forEach(stage => {
+        stage.addEventListener('click', function(e) {
+            e.preventDefault();
+            const stageType = this.getAttribute('data-stage');
+            console.log('클릭된 라이프사이클 단계:', stageType);
+            
+            // 선택 상태 토글
+            if (this.classList.contains('selected')) {
+                this.classList.remove('selected');
+                selectedStages.delete(stageType);
+            } else {
+                this.classList.add('selected');
+                selectedStages.add(stageType);
+            }
+            
+            // 필터링 실행
+            applyFilters();
+        });
+    });
+    
+    // 카테고리 라벨 클릭 이벤트
+    const areaLabels = document.querySelectorAll('.area-label.clickable');
+    areaLabels.forEach(label => {
+        label.addEventListener('click', function(e) {
+            e.preventDefault();
+            const category = this.getAttribute('data-category');
+            console.log('클릭된 카테고리:', category);
+            
+            // 선택 상태 토글
+            if (this.classList.contains('selected')) {
+                this.classList.remove('selected');
+                selectedCategories.delete(category);
+            } else {
+                this.classList.add('selected');
+                selectedCategories.add(category);
+            }
+            
+            // 필터링 실행
+            applyFilters();
+        });
+    });
+    
+    // 법령/가이드 버튼 클릭 이벤트
+    const typeBtns = document.querySelectorAll('.type-btn.clickable');
+    typeBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const type = this.getAttribute('data-type');
+            console.log('클릭된 타입:', type);
+            
+            // 선택 상태 토글
+            if (this.classList.contains('selected')) {
+                this.classList.remove('selected');
+                selectedTypes.delete(type);
+            } else {
+                this.classList.add('selected');
+                selectedTypes.add(type);
+            }
+            
+            // 필터링 실행
+            applyFilters();
+        });
+    });
+    
+    // 필터링 함수
+    function applyFilters() {
+        const guidelineItems = document.querySelectorAll('.guideline-item');
+        
+        // 아무것도 선택되지 않은 경우 모든 가이드라인 숨김
+        if (selectedCategories.size === 0 && selectedStages.size === 0) {
+            guidelineItems.forEach(item => {
+                item.classList.remove('visible', 'filtered');
+            });
+            updateFilterStatus();
+            return;
+        }
+        
+        guidelineItems.forEach(item => {
+            const itemCategory = item.getAttribute('data-category');
+            const itemClasses = item.className.split(' ');
+            
+            let shouldShow = true;
+            
+            // 카테고리 필터링
+            if (selectedCategories.size > 0) {
+                shouldShow = shouldShow && selectedCategories.has(itemCategory);
+            }
+            
+            // 스테이지 필터링
+            if (selectedStages.size > 0) {
+                const hasMatchingStage = itemClasses.some(className => selectedStages.has(className));
+                shouldShow = shouldShow && hasMatchingStage;
+            }
+            
+            // 필터링 결과 적용
+            if (shouldShow) {
+                item.classList.add('visible');
+                item.classList.remove('filtered');
+            } else {
+                item.classList.remove('visible');
+                item.classList.add('filtered');
+            }
+        });
+        
+        // 필터링 결과 표시
+        updateFilterStatus();
+    }
+    
+    // 필터 상태 표시 함수
+    function updateFilterStatus() {
+        const statusContainer = document.querySelector('.filter-status') || createFilterStatus();
+        
+        let statusText = '';
+        if (selectedCategories.size > 0 || selectedStages.size > 0) {
+            const categoryText = selectedCategories.size > 0 ? `카테고리: ${Array.from(selectedCategories).join(', ')}` : '';
+            const stageText = selectedStages.size > 0 ? `스테이지: ${Array.from(selectedStages).join(', ')}` : '';
+            statusText = `필터링: ${[categoryText, stageText].filter(Boolean).join(' | ')}`;
+        } else {
+            statusText = '가이드라인을 보려면 카테고리 또는 스테이지를 선택해주세요';
+        }
+        
+        statusContainer.textContent = statusText;
+    }
+    
+    // 필터 상태 컨테이너 생성
+    function createFilterStatus() {
+        const statusContainer = document.createElement('div');
+        statusContainer.className = 'filter-status';
+        statusContainer.style.cssText = `
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+            background: #fef3c7;
+            border-radius: 12px;
+            border: 2px solid #f59e0b;
+            font-weight: 600;
+            color: #92400e;
+            font-size: 16px;
+        `;
+        
+        // resources-navigator-section의 시작 부분에 삽입
+        const navigatorSection = document.querySelector('.resources-navigator-section');
+        if (navigatorSection) {
+            navigatorSection.insertBefore(statusContainer, navigatorSection.firstChild);
+        }
+        
+        return statusContainer;
+    }
+    
+    // 초기 필터 상태 표시
+    updateFilterStatus();
+    
     // FAQ 아코디언 기능 (기본 및 상세)
     const faqItems = document.querySelectorAll('.faq-item, .faq-item-detailed');
     
@@ -73,6 +232,69 @@ document.addEventListener('DOMContentLoaded', function() {
                     item.style.display = 'none';
                 }
             });
+        });
+    });
+    
+    // 자료실 게시판 검색 및 필터링
+    const searchInput = document.querySelector('.search-input');
+    const searchBtn = document.querySelector('.search-btn');
+    const categoryFilter = document.querySelector('.category-filter');
+    const stageFilter = document.querySelector('.stage-filter');
+    const tableRows = document.querySelectorAll('.table-row');
+    
+    if (searchInput && searchBtn) {
+        // 검색 기능
+        const performSearch = () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedCategory = categoryFilter.value;
+            const selectedStage = stageFilter.value;
+            
+            tableRows.forEach(row => {
+                const category = row.getAttribute('data-category');
+                const stage = row.getAttribute('data-stage');
+                const title = row.querySelector('.col-title h4').textContent.toLowerCase();
+                const description = row.querySelector('.col-title .description').textContent.toLowerCase();
+                
+                let showRow = true;
+                
+                // 카테고리 필터
+                if (selectedCategory && category !== selectedCategory) {
+                    showRow = false;
+                }
+                
+                // 단계 필터
+                if (selectedStage && !stage.includes(selectedStage)) {
+                    showRow = false;
+                }
+                
+                // 검색어 필터
+                if (searchTerm && !title.includes(searchTerm) && !description.includes(searchTerm)) {
+                    showRow = false;
+                }
+                
+                row.style.display = showRow ? 'grid' : 'none';
+            });
+        };
+        
+        searchBtn.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+        
+        // 필터 변경 시 자동 검색
+        categoryFilter.addEventListener('change', performSearch);
+        stageFilter.addEventListener('change', performSearch);
+    }
+    
+    // 다운로드 버튼 클릭 이벤트
+    const downloadBtns = document.querySelectorAll('.download-btn');
+    downloadBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const row = this.closest('.table-row');
+            const title = row.querySelector('.col-title h4').textContent;
+            alert(`"${title}" 자료 다운로드를 시작합니다.`);
         });
     });
     

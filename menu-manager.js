@@ -33,13 +33,13 @@ function setActiveMenu() {
 // 하위 메뉴 생성 및 렌더링
 function createSubmenu(menuKey, menuInfo) {
     const submenu = document.createElement('div');
-    submenu.className = 'site-header__submenu';
+    submenu.className = 'submenu';
     submenu.setAttribute('data-menu', menuKey);
     
     menuInfo.items.forEach(item => {
         const submenuItem = document.createElement('a');
         submenuItem.href = item.url;
-        submenuItem.className = `site-header__submenu-item ${item.active ? 'site-header__submenu-item--active' : ''}`;
+        submenuItem.className = `submenu-item ${item.active ? 'active' : ''}`;
         submenuItem.textContent = item.name;
         submenu.appendChild(submenuItem);
     });
@@ -80,7 +80,7 @@ function initializeMenus() {
 function updateMenuData(newData) {
     Object.assign(menuData, newData);
     // 기존 메뉴 제거 후 재생성
-    const existingSubmenus = document.querySelectorAll('.site-header__submenu');
+    const existingSubmenus = document.querySelectorAll('.submenu');
     existingSubmenus.forEach(submenu => submenu.remove());
     initializeMenus();
 }
