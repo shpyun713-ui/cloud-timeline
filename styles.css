@@ -3224,6 +3224,7 @@ body {
     transform: scale(1.02);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
     z-index: 10;
+    overflow: visible; /* 확장된 내용이 잘리지 않도록 */
 }
 
 .k-card-expanded-content {
@@ -3237,11 +3238,12 @@ body {
 }
 
 .k-card-expandable:hover .k-card-expanded-content {
-    max-height: 1200px;
+    max-height: 3000px; /* 충분한 높이로 증가 */
     opacity: 1;
     margin-top: 24px;
     padding-top: 24px;
     border-top: 2px solid #e5e7eb;
+    overflow: visible; /* 확장된 내용이 잘리지 않도록 */
 }
 
 /* 사업 카드 스타일 */
@@ -3677,6 +3679,11 @@ body {
 .k-card:hover {
     transform: scale(1.02);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 확장 가능한 카드의 경우 hover 시 overflow를 visible로 */
+.k-card-expandable:hover .k-card {
+    overflow: visible;
 }
 
 .k-card-with-callout {
