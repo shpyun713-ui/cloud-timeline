@@ -50,6 +50,9 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
+echo styles.css 강제 추가...
+git add -f styles.css
+
 echo 스테이징된 변경사항 확인...
 git status --short
 echo.
