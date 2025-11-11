@@ -3220,7 +3220,8 @@ body {
 }
 
 .k-card-expandable:hover {
-    width: 700px;
+    width: 1000px;
+    min-width: 1000px;
     transform: scale(1.02);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
     z-index: 10;
